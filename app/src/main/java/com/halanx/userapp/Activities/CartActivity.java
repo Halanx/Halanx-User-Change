@@ -16,6 +16,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -26,6 +27,7 @@ import com.halanx.userapp.Interfaces.DataInterface;
 import com.halanx.userapp.POJO.CartItem;
 import com.halanx.userapp.POJO.CartsInfo;
 import com.halanx.userapp.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +40,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 import static com.halanx.userapp.GlobalAccess.djangoBaseUrl;
 
+
 public class CartActivity extends AppCompatActivity implements View.OnClickListener {
 
     RecyclerView recyclerView;
@@ -48,9 +51,10 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
     Button btnCheckout, btnDelivery, btnconfirm;
     TextView tvSubtotal, tvTotal, tvDelivery, totalitems;
 
-    Button btDelAsap, btDelSchedule, btAddDetails, btAddLocate;
+    Button btDelAsap, btDelSchedule, btAddDetails;
+    TextView btAddLocate;
     Boolean delivery_scheduled = false, delivery_address = false;
-
+    ImageView ivMap;
 
     ProgressBar progressBar;
 
@@ -65,7 +69,7 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
     String date, timings;
 
     String addressDetails;
-    EditText line1,line2,line3;
+    EditText line1, line2, line3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,11 +81,11 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
         retrofit = builder.build();
         client = retrofit.create(DataInterface.class);
 
-
+        ivMap = (ImageView) findViewById(R.id.iv_map);
         btDelAsap = (Button) findViewById(R.id.bt_delivery_asap);
         btDelSchedule = (Button) findViewById(R.id.bt_delivery_schedule);
         btAddDetails = (Button) findViewById(R.id.bt_address_details);
-        btAddLocate = (Button) findViewById(R.id.bt_address_locate);
+        btAddLocate = (TextView) findViewById(R.id.bt_address_locate);
 
         btnDelivery = (Button) findViewById(R.id.details);
 
@@ -110,6 +114,22 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
         progressBar.setVisibility(View.VISIBLE);
         btnCheckout.setOnClickListener(this);
         // btnDelivery.setOnClickListener(this);
+
+        SharedPreferences sharedPref = getSharedPreferences("location", Context.MODE_PRIVATE);
+        float latitude = sharedPref.getFloat("latitudeDelivery", 0);// LATITUDE
+        float longitude = sharedPref.getFloat("longitudeDelivery", 0);// LONGITUDE
+        if (latitude != 0 && longitude != 0) {
+
+
+            Log.i("Url", "https://maps.googleapis.com/maps/api/staticmap?zoom=13" +
+                    "&markers=color:red%7label:C%7C" + latitude + "," + longitude + "&size=400x200&" +
+                    "key=AIzaSyBnCtz4CuPtcZ-87zXLsYvH1BrkTTJ9eyw");
+            Picasso.with(this).load("https://maps.googleapis.com/maps/api/staticmap?zoom=13" +
+                    "&markers=color:red%7Clabel:%7C" + latitude + "," + longitude + "&size=400x200&" +
+                    "key=AIzaSyBnCtz4CuPtcZ-87zXLsYvH1BrkTTJ9eyw").into(ivMap);
+        } else {
+            ivMap.setVisibility(View.GONE);
+        }
 
 
         SharedPreferences sharedPreferences = getSharedPreferences("Login", Context.MODE_PRIVATE);
@@ -158,7 +178,6 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
 
                             tvTotal.setText(total);
                             tvDelivery.setText(del);
-
 
 
                         }
@@ -263,12 +282,11 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
                     @Override
                     public void onClick(View view) {
 
-                        if(line1.getText().equals("")||line2.getText().equals("")||line3.getText().equals("")){
+                        if (line1.getText().equals("") || line2.getText().equals("") || line3.getText().equals("")) {
 
                             Toast.makeText(getApplicationContext(), "Enter Your Address", Toast.LENGTH_SHORT).show();
 
-                        }
-                        else {
+                        } else {
                             Toast.makeText(getApplicationContext(), "Address Details Saved", Toast.LENGTH_SHORT).show();
                             addressDetails = line1.getText().toString() + ", " + line2.getText().toString() + ", " + line3.getText().toString();
                             Log.d("TAG", addressDetails);
@@ -292,7 +310,7 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.bt_address_locate:
 
                 Intent intentMap = new Intent(CartActivity.this, MapsActivity.class);
-                intentMap.putExtra("fromCart",true);
+                intentMap.putExtra("fromCart", true);
                 startActivity(intentMap);
                 break;
             case R.id.checkout:

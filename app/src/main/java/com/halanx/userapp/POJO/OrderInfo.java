@@ -63,17 +63,22 @@ public class OrderInfo {
     @SerializedName("PriorityScore")
     @Expose
     private Integer priorityScore;
+    @SerializedName("AsSoonAsPossible")
+    private boolean isASAP;
 
-    public OrderInfo(long customerPhoneNo, String deliveryAddress, String deliveryDate, String startTime, String endTime, String notes, float lat, float lon) {
+    public OrderInfo(long customerPhoneNo, String deliveryAddress, String deliveryDate, String startTime, String endTime, Boolean isASAP, String notes, float lat, float lon) {
         this.customerPhoneNo = customerPhoneNo;
         this.deliveryAddress = deliveryAddress;
         this.deliveryDate = deliveryDate;
         this.startTime = startTime;
         this.endTime = endTime;
         this.notes = notes;
+        this.isASAP = isASAP;
         latitude = lat;
         longitude = lon;
     }
+
+
 
     public float getLatitude() {
         return latitude;

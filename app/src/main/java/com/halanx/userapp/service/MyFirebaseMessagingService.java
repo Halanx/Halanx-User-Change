@@ -1,9 +1,13 @@
 package com.halanx.userapp.service;
 
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
+import android.media.RingtoneManager;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import android.support.v7.app.NotificationCompat;
 import android.util.Log;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
@@ -15,6 +19,8 @@ import com.halanx.userapp.util.NotificationUtils;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.Calendar;
 
 /**
  * Created by Nishant on 15/07/17.
@@ -108,18 +114,51 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 notificationUtils.playNotificationSound();
             } else {
                 // app is in background, show the notification in notification tray
-                Intent resultIntent = new Intent(getApplicationContext(), HomeActivity.class);
-                resultIntent.putExtra("message", message);
-                Log.d("data","4");
+                Intent resultIntent = new Intent(this, HomeActivity.class);
+
+                resultIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+                        | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                PendingIntent piResult = PendingIntent.getActivity(this,
+                        (int) Calendar.getInstance().getTimeInMillis(), resultIntent, 0);
+
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                intent.addCategory(Intent.CATEGORY_HOME);
+
+                Intent resultIntenta = new Intent(this, HomeActivity.class);
+
+                resultIntenta.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+                        | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                PendingIntent piResulta = PendingIntent.getActivity(this,
+                        (int) Calendar.getInstance().getTimeInMillis(), resultIntenta, 0);
 
 
-                // check for image attachment
-                if (TextUtils.isEmpty(imageUrl)) {
-                    showNotificationMessage(getApplicationContext(), title, message, timestamp, resultIntent);
-                } else {
-                    // image is present, show notification with image
-                    showNotificationMessageWithBigImage(getApplicationContext(), title, message, timestamp, resultIntent, imageUrl);
-                }
+// Assign big picture notification
+                NotificationCompat.BigPictureStyle bigPictureStyle = new NotificationCompat.BigPictureStyle();
+
+                bigPictureStyle.bigPicture(
+                        BitmapFactory.decodeResource(getResources(),
+                                R.drawable.logo)).build();
+
+                NotificationCompat.Builder builder =
+                        (NotificationCompat.Builder) new NotificationCompat.Builder(this)
+                                .setSmallIcon(R.drawable.logochange)
+                                .setContentTitle("Halanx")
+                                .setContentText("Hey Buddy Your BatchInfo is ready")
+                                .setSound(RingtoneManager.getValidRingtoneUri(getApplicationContext()))
+                                .setStyle(bigPictureStyle)
+                                .setContentIntent(piResulta)
+                                .setOngoing(true)
+                                .setAutoCancel(true);
+//set intents and pending intents to call activity on click of "show activity" action button of notification
+
+// Gets an instance of the NotificationManager service
+                NotificationManager notificationManager =(NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+
+                builder.build().flags |= builder.build().FLAG_INSISTENT;
+
+//to post your notification to the notification bar
+                notificationManager.notify(0, builder.build());
             }
         } catch (JSONException e) {
             Log.e(TAG, "Json Exception: " + e.getMessage());

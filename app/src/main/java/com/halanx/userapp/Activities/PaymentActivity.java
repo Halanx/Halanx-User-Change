@@ -97,12 +97,12 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
 
                 if ((getIntent().getBooleanExtra("deliveryScheduled", false))) {
 
-                    order = new OrderInfo(userMobile, addressDetails, date, starttime, endtime, null, latitude, longitude);
+                    order = new OrderInfo(userMobile, addressDetails, date, starttime, endtime, false, null, latitude, longitude);
                     Log.d("done", "done");
                 } else if (!(getIntent().getBooleanExtra("deliveryScheduled", true))) {
                     String date = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
 
-                    order = new OrderInfo(userMobile, addressDetails, date, null, null, "Delivery ASAP", latitude, longitude);
+                    order = new OrderInfo(userMobile, addressDetails, date, null, null, true, null, latitude, longitude);
                 }
 
 

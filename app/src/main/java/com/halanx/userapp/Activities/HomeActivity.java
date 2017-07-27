@@ -228,7 +228,7 @@ public class HomeActivity extends AppCompatActivity
                     .withMaterialShowcase()
                     .setTarget(target)
                     .setContentTitle("DELIVERY LOCATION")
-                    .setContentText("Change your Delivery Location and Search for Nearby By stores by just a singe Tap ")
+                    .setContentText("Change your Delivery Location and Search for Nearby stores by just a singe Tap ")
                     .withHoloShowcase()
                     .setStyle(R.style.CustomShowcaseTheme3)
                     .build();

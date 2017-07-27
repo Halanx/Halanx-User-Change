@@ -54,7 +54,7 @@ public class ReferEarnActivity extends AppCompatActivity {
 
         String shareBody = "Get grocery and food delivered from your favorite stores and " +
                 "restaurants in as little as an hour. Download app now : " +
-                "https://play.google.com/store/apps/details?id=com.halanx.tript.userapp";
+                "https://play.google.com/store/apps/details?id=com.halanx.userapp";
 
         sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Halanx : Grocery and Food delivery");
         sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);

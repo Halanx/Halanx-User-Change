@@ -33,7 +33,7 @@
     <style name="CustomShowcaseTheme3" parent="ShowcaseView.Light">
         <item name="sv_backgroundColor">#c60a0a0a</item>
         <item name="sv_showcaseColor">#ffffff</item>
-        <item name="sv_buttonText">Hide</item>
+        <item name="sv_buttonText">Got it</item>
         <item name="sv_tintButtonColor">false</item>
         <item name="sv_titleTextAppearance">@style/CustomTitle2</item>
         <item name="sv_detailTextAppearance">@style/CustomText2</item>

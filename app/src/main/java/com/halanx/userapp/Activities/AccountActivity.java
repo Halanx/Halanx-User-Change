@@ -10,25 +10,32 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.gson.GsonBuilder;
 import com.halanx.userapp.POJO.UserInfo;
 import com.halanx.userapp.R;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class AccountActivity extends AppCompatActivity {
 
     SharedPreferences sharedPreferences;
     TextView tvFirstName, tvLastName, tvEmail, tvMobile, signout;
-    EditText tvAddress;
+    TextView tvAddress;
     String mobileNumber;
     EditText line1,line2,line3;
 
     String addressDetails;
 
-    RelativeLayout edit;
+    Button edit;
+    Dialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,16 +45,31 @@ public class AccountActivity extends AppCompatActivity {
         tvFirstName = (TextView) findViewById(R.id.tv_firstName_useraccount);
         tvLastName = (TextView) findViewById(R.id.tv_lastName_user_account);
         tvEmail = (TextView) findViewById(R.id.tv_email_user_account);
-        tvAddress = (EditText) findViewById(R.id.tv_address_user_account);
+        tvAddress = (TextView) findViewById(R.id.tv_address_user_account);
         tvMobile = (TextView) findViewById(R.id.tv_mobile_user_account);
-        edit = (RelativeLayout) findViewById(R.id.edit);
+        edit = (Button) findViewById(R.id.edittext);
 
         signout = (TextView) findViewById(R.id.signout);
+
+        String userInfo = getSharedPreferences("Login", Context.MODE_PRIVATE).getString("UserInfo", null);
+        UserInfo user = new GsonBuilder().create().fromJson(userInfo, UserInfo.class);
+
+        tvFirstName.setText(user.getFirstName());
+        tvLastName.setText(user.getLastName());
+        tvEmail.setText(user.getEmailId());
+        tvMobile.setText(Long.toString(user.getPhoneNo()));
+        Log.d("dataa",String.valueOf(user.getAddress()));
+        tvAddress.setText(user.getAddress());
+
+
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                Log.d("done,","done");
                 final Dialog dialog = new Dialog(AccountActivity.this);
                 dialog.setContentView(R.layout.layout_custom_alert_dialogue);
+
 
                 line1 = (EditText) dialog.findViewById(R.id.et1_dialogue);
                 line2 = (EditText) dialog.findViewById(R.id.et2_dialogue);
@@ -59,33 +81,64 @@ public class AccountActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
 
-                        if (line1.getText().equals(" ") || line2.getText().equals(" ") || line3.getText().equals(" ")) {
+                        if(line1.getText().equals("")||line2.getText().equals("")||line3.getText().equals("")){
 
                             Toast.makeText(getApplicationContext(), "Enter Your Address", Toast.LENGTH_SHORT).show();
 
-                        } else {
+                        }
+                        else {
                             Toast.makeText(getApplicationContext(), "Address Details Saved", Toast.LENGTH_SHORT).show();
                             addressDetails = line1.getText().toString() + ", " + line2.getText().toString() + ", " + line3.getText().toString();
                             Log.d("TAG", addressDetails);
+                            tvAddress.setText(addressDetails);
                             dialog.dismiss();
+                            String url = "http://ec2-34-208-181-152.us-west-2.compute.amazonaws.com/users/" +
+                                    getSharedPreferences("Login", Context.MODE_PRIVATE).getString("MobileNumber", null)+"/";
+                             JSONObject obj = new JSONObject();
+                            try {
+                                obj.put("Address", addressDetails);
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                            Volley.newRequestQueue(getApplicationContext()).add(new JsonObjectRequest(Request.Method.PATCH, url, obj, new com.android.volley.Response.Listener<JSONObject>() {
+                                @Override
+                                public void onResponse(JSONObject response) {
+                                    Log.i("Address", "Done");
+                                }
+                            }, new com.android.volley.Response.ErrorListener() {
+                                @Override
+                                public void onErrorResponse(VolleyError error) {
+
+                                }
+                            }));
+
+                            getSharedPreferences("Login", Context.MODE_PRIVATE).edit().
+                                    putString("Address", addressDetails).apply();
                         }
                     }
                 });
-                tvAddress.setText(addressDetails);
+
+                cancel.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        dialog.dismiss();
+                    }
+                });
+                dialog.show();
 
             }});
 
+        if ((getSharedPreferences("Login", Context.MODE_PRIVATE).getString("Address","null").equals("null"))){
 
-        String userInfo = getSharedPreferences("Login", Context.MODE_PRIVATE).getString("UserInfo", null);
-        UserInfo user = new GsonBuilder().create().fromJson(userInfo, UserInfo.class);
+        }
+        else{
+
+            tvAddress.setText(getSharedPreferences("Login", Context.MODE_PRIVATE).getString("Address",null));
+        }
 
 
 
-        tvFirstName.setText(user.getFirstName());
-        tvLastName.setText(user.getLastName());
-        tvEmail.setText(user.getEmailId());
-        tvMobile.setText(Long.toString(user.getPhoneNo()));
-        tvAddress.setText(user.getAddress());
+
 
 
         signout.setOnClickListener(new View.OnClickListener() {

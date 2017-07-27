@@ -52,12 +52,13 @@ public class UserInfo {
 
 
 
-    public UserInfo(long phoneNo, String emailId, String firstName, String lastName, String password, String firebaseid) {
+    public UserInfo(long phoneNo, String emailId, String firstName, String lastName, String password, String address) {
         this.phoneNo = phoneNo;
         this.emailId = emailId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
+        this.address = address;
     }
 
 

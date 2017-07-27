@@ -222,6 +222,7 @@ public class SigninActivity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<Resp> call, Throwable t) {
+                        Toast.makeText(getApplicationContext(),"New User! Signup First",Toast.LENGTH_SHORT).show();
 
                     }
                 });

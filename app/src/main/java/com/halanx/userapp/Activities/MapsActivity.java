@@ -147,6 +147,12 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
 
         searchView = (SearchView) findViewById(R.id.floating_search_view);
+        searchView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                searchView.setIconified(false);
+            }
+        });
 
         EditText searchPlate = (EditText) searchView.findViewById(android.support.v7.appcompat.R.id.search_src_text);
 

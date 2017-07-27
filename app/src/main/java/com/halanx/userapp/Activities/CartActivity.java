@@ -101,7 +101,6 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
         tvSubtotal = (TextView) findViewById(R.id.tv_cart_subtotal);
         tvTotal = (TextView) findViewById(R.id.tv_cart_total);
         tvDelivery = (TextView) findViewById(R.id.tv_cart_deliverycharge);
-        totalitems = (TextView) findViewById(R.id.total_items);
         progressBar = (ProgressBar) findViewById(R.id.progressBar_cart);
 
         btnconfirm = (Button) findViewById(R.id.confirm_details);
@@ -133,8 +132,6 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
                             activeItems.add(items.get(i));
                         }
                     }
-
-                    totalitems.setText(String.valueOf(items.size()));
 
                     //Displaying carts
                     Log.d("TAG", "If");

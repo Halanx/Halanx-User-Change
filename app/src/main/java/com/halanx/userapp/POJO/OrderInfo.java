@@ -21,6 +21,9 @@ public class OrderInfo {
     @SerializedName("Total")
     @Expose
     private Double total;
+    @SerializedName("SubTotal")
+    @Expose
+    private Double subTotal;
     @SerializedName("DeliveryCharges")
     @Expose
     private Double deliveryCharges;
@@ -64,6 +67,7 @@ public class OrderInfo {
     @Expose
     private Integer priorityScore;
     @SerializedName("AsSoonAsPossible")
+    @Expose
     private boolean isASAP;
 
     public OrderInfo(long customerPhoneNo, String deliveryAddress, String deliveryDate, String startTime, String endTime, Boolean isASAP, String notes, float lat, float lon) {
@@ -78,6 +82,9 @@ public class OrderInfo {
         longitude = lon;
     }
 
+    public Double getSubTotal() {
+        return subTotal;
+    }
 
 
     public float getLatitude() {

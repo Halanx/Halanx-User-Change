@@ -38,7 +38,6 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
     Retrofit retrofit;
     DataInterface client;
     OrderInfo order;
-
     ProgressDialog pd;
 
     @Override

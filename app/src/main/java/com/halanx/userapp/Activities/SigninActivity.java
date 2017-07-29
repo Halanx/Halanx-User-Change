@@ -26,6 +26,7 @@ import com.android.volley.Request;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
@@ -71,13 +72,14 @@ public class SigninActivity extends AppCompatActivity {
     String[] namea;
     String mobile;
     String password;
+    AccessToken accessToken;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.activity_signin);
-
+        accessToken = AccessToken.getCurrentAccessToken();
 
         LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
@@ -184,7 +186,6 @@ public class SigninActivity extends AppCompatActivity {
                         if (!response.body().getError()) {
                             progressBar.setVisibility(View.INVISIBLE);
 //                            Toast.makeText(SigninActivity.this, "Login " + !response.body().getError(), Toast.LENGTH_SHORT).show();
-
                             Volley.newRequestQueue(SigninActivity.this).add(new StringRequest(Request.Method.GET, "http://ec2-34-208-181-152.us-west-2.compute.amazonaws.com/users/" + mobile, new com.android.volley.Response.Listener<String>() {
                                 @Override
                                 public void onResponse(String response) {
@@ -247,7 +248,7 @@ public class SigninActivity extends AppCompatActivity {
         // FACEBOOK LOGIN
         fblogin = (LoginButton) findViewById(R.id.login_button);
         fblogin.setReadPermissions(Arrays.asList(
-                "public_profile", "email", "user_birthday", "user_friends"));
+                "public_profile", "email", "user_birthday", "user_friends",""));
         callbackManager = CallbackManager.Factory.create();
 
         fblogin.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
@@ -263,7 +264,7 @@ public class SigninActivity extends AppCompatActivity {
                             public void onCompleted(JSONObject object, GraphResponse response) {
 
 
-                                Log.v("LoginActivity", String.valueOf(loginResult.getAccessToken()));
+                                Log.v("LoginActivity", String.valueOf(loginResult.getAccessToken().getToken()));
                                 Log.d("fb_data", String.valueOf(object));
 
                                 try {// Application code
@@ -280,6 +281,7 @@ public class SigninActivity extends AppCompatActivity {
                                             putBoolean("fbloginned", true)
                                             .putString("first_name", namea[0])
                                             .putString("last_name", namea[1])
+                                            .putString("access_token",loginResult.getAccessToken().getToken())
                                             .putString("email", email).apply();
                                     Intent intent = new Intent(SigninActivity.this, RegisterActivity.class);
                                     startActivity(intent);

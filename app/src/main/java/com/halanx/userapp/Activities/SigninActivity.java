@@ -278,12 +278,14 @@ public class SigninActivity extends AppCompatActivity {
                                     namea = name.trim().split("\\s+");
                                     Log.d("updatedata",namea[0]+","+namea[1]);
                                     getSharedPreferences("fbdata", Context.MODE_PRIVATE).edit().
-                                            putBoolean("fbloginned", true)
-                                            .putString("first_name", namea[0])
-                                            .putString("last_name", namea[1])
-                                            .putString("access_token",loginResult.getAccessToken().getToken())
-                                            .putString("email", email).apply();
+                                            putBoolean("fbloginned", true).apply();
                                     Intent intent = new Intent(SigninActivity.this, RegisterActivity.class);
+                                    intent.putExtra("first_name", namea[0]);
+                                    intent.putExtra("last_name", namea[1]);
+                                    intent.putExtra("access_token",loginResult.getAccessToken().getToken());
+                                    intent.putExtra("email", email);
+
+
                                     startActivity(intent);
 
 

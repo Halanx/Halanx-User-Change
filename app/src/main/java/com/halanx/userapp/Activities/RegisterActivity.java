@@ -99,12 +99,15 @@ RegisterActivity extends AppCompatActivity {
         //GIVING NULL POINT EXCEPTION
         if(getSharedPreferences("fbdata", Context.MODE_PRIVATE).getBoolean("fbloginned",false)){
 
+            inputFname.setText(getIntent().getStringExtra("first_name"));
+            inputLname.setText(getIntent().getStringExtra("last_name"));
+            inputEmail.setText(getIntent().getStringExtra("email"));
+            passworddata.setVisibility(View.GONE);
 
-            inputFname.setText(getSharedPreferences("fbdata", Context.MODE_PRIVATE).getString("first_name",null));
-            inputLname.setText(getSharedPreferences("fbdata", Context.MODE_PRIVATE).getString("last_name",null));
-            inputEmail.setText(getSharedPreferences("fbdata", Context.MODE_PRIVATE).getString("email",null));
-            passworddata.setPasswordVisibilityToggleEnabled(false);
-            inputPassword.setVisibility(View.GONE);
+
+//            getAccess token by getintent.getStringExtra("access_token")
+            
+
         }
 
         SharedPreferences pref = getApplicationContext().getSharedPreferences(Config.SHARED_PREF, 0);

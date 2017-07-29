@@ -1,9 +1,9 @@
 <resources>
     <string name="password">Password</string>
 
-    <string name="facebook_app_id">1275803525879195</string>
+    <string name="facebook_app_id">802327439948630</string>
 
-    <string name="fb_login_protocol_scheme">fb1843637429286224</string>
+    <string name="fb_login_protocol_scheme">fb802327439948630</string>
 
     <string name="prompt">This is prompt</string>
 

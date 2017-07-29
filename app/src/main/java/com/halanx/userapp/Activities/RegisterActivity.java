@@ -106,7 +106,7 @@ RegisterActivity extends AppCompatActivity {
 
 
 //            getAccess token by getintent.getStringExtra("access_token")
-            
+
 
         }
 
@@ -150,6 +150,10 @@ RegisterActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Enter password!", Toast.LENGTH_SHORT).show();
                         return;
                     }
+                     if (password.length() < 6) {
+                         Toast.makeText(getApplicationContext(), "Password too short, enter minimum 6 characters!", Toast.LENGTH_SHORT).show();
+                         return;
+                     }
 
 
                 }
@@ -163,10 +167,7 @@ RegisterActivity extends AppCompatActivity {
                 } else if(!emailValidator(email)){
                     Toast.makeText(RegisterActivity.this, "Please enter valid email address", Toast.LENGTH_SHORT).show();
                 }
-                else if (password.length() < 6) {
-                    Toast.makeText(getApplicationContext(), "Password too short, enter minimum 6 characters!", Toast.LENGTH_SHORT).show();
-                    return;
-                } else if (TextUtils.isEmpty(firstName) || TextUtils.isEmpty(lastName)) {
+               else if (TextUtils.isEmpty(firstName) || TextUtils.isEmpty(lastName)) {
                     Toast.makeText(getApplicationContext(), "Enter First and Last name", Toast.LENGTH_SHORT).show();
                     return;
                 } else if (TextUtils.isEmpty(mobileNumber)) {

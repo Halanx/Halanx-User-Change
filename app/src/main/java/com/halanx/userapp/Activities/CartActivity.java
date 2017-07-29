@@ -177,6 +177,7 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
                             tvDelivery.setText(del);
 
 
+
                         }
 
                         @Override

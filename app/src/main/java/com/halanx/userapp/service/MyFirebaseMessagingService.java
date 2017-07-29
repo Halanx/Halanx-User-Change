@@ -85,6 +85,8 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         try {
             JSONObject data = json.getJSONObject("data");
 
+            Log.d("data", String.valueOf(data));
+
             String title = data.getString("title");
             String message = data.getString("message");
             boolean isBackground = data.getBoolean("is_background");
@@ -144,7 +146,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                         (NotificationCompat.Builder) new NotificationCompat.Builder(this)
                                 .setSmallIcon(R.drawable.logochange)
                                 .setContentTitle("Halanx")
-                                .setContentText("Hey Buddy Your BatchInfo is ready")
+                                .setContentText("Hey Buddy Your Info is ready")
                                 .setSound(RingtoneManager.getValidRingtoneUri(getApplicationContext()))
                                 .setStyle(bigPictureStyle)
                                 .setContentIntent(piResulta)

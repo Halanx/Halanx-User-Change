@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
@@ -68,6 +69,7 @@ RegisterActivity extends AppCompatActivity {
     String email, password, firstName, lastName, icode;
     EditText otp;
     String regId;
+    TextInputLayout passworddata;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -83,24 +85,28 @@ RegisterActivity extends AppCompatActivity {
         builder = new Retrofit.Builder().baseUrl(djangoBaseUrl).addConverterFactory(GsonConverterFactory.create());
         retrofit = builder.build();
         client = retrofit.create(DataInterface.class);
-
+        inputPassword = (EditText) findViewById(R.id.tv_password);
         btnVerify = (Button) findViewById(R.id.btn_verify);
         inputEmail = (EditText) findViewById(R.id.tv_email);
-        inputPassword = (EditText) findViewById(R.id.tv_password);
         inputFname = (EditText) findViewById(R.id.tv_firstName);
         inputLname = (EditText) findViewById(R.id.tv_lastName);
         inputMobile = (EditText) findViewById(R.id.tv_mobile);
         inputIcode = (EditText) findViewById(R.id.tv_inviteCode);
         progressRegister = (ProgressBar) findViewById(R.id.progressBar_register);
+        passworddata = (TextInputLayout) findViewById(R.id.edittextlayout);
 
 
         //GIVING NULL POINT EXCEPTION
         if(getSharedPreferences("fbdata", Context.MODE_PRIVATE).getBoolean("fbloginned",false)){
+
+
             inputFname.setText(getSharedPreferences("fbdata", Context.MODE_PRIVATE).getString("first_name",null));
             inputLname.setText(getSharedPreferences("fbdata", Context.MODE_PRIVATE).getString("last_name",null));
             inputEmail.setText(getSharedPreferences("fbdata", Context.MODE_PRIVATE).getString("email",null));
+            passworddata.setPasswordVisibilityToggleEnabled(false);
             inputPassword.setVisibility(View.GONE);
         }
+
         SharedPreferences pref = getApplicationContext().getSharedPreferences(Config.SHARED_PREF, 0);
         regId = pref.getString("regId", null);
 
@@ -121,23 +127,29 @@ RegisterActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 email = inputEmail.getText().toString().trim();
-                password = inputPassword.getText().toString().trim();
                 firstName = inputFname.getText().toString().trim();
                 lastName = inputLname.getText().toString().trim();
                 mobileNumber = inputMobile.getText().toString().trim();
                 icode = inputIcode.getText().toString().trim();
 
 
-//                if(getSharedPreferences("fbdata", Context.MODE_PRIVATE).getBoolean("fbloginned",false)) {
-//
-//
-//                    if (mobileNumber.length() != 10) {
-//                        Toast.makeText(getApplicationContext(), "Please enter a valid mobile number", Toast.LENGTH_SHORT).show();
-//                        return;
-//
-//
-//                    }
-//                }
+                if(getSharedPreferences("fbdata", Context.MODE_PRIVATE).getBoolean("fbloginned",false)) {
+
+
+                    if (mobileNumber.length() != 10) {
+                        Toast.makeText(getApplicationContext(), "Please enter a valid mobile number", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                }
+                else{
+                    password = inputPassword.getText().toString().trim();
+                     if (TextUtils.isEmpty(password)) {
+                        Toast.makeText(getApplicationContext(), "Enter password!", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+
+
+                }
 
 
 
@@ -148,10 +160,7 @@ RegisterActivity extends AppCompatActivity {
                 } else if(!emailValidator(email)){
                     Toast.makeText(RegisterActivity.this, "Please enter valid email address", Toast.LENGTH_SHORT).show();
                 }
-                else if (TextUtils.isEmpty(password)) {
-                    Toast.makeText(getApplicationContext(), "Enter password!", Toast.LENGTH_SHORT).show();
-                    return;
-                } else if (password.length() < 6) {
+                else if (password.length() < 6) {
                     Toast.makeText(getApplicationContext(), "Password too short, enter minimum 6 characters!", Toast.LENGTH_SHORT).show();
                     return;
                 } else if (TextUtils.isEmpty(firstName) || TextUtils.isEmpty(lastName)) {

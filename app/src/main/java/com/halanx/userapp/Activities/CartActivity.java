@@ -122,7 +122,7 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
 
             Log.i("Url", "https://maps.googleapis.com/maps/api/staticmap?zoom=16" +
                     "&markers=color:red%7label:C%7C" + latitude + "," + longitude + "&size=400x200&" +
-                    "key=AIzaSyBnCtz4CuPtcZ-87zXLsYvH1BrkTTJ9eyw");
+                    "key=AIzaSyCj7HXOZgUqjouFVydt4irrhu3cQLqXMbg");
             Picasso.with(this).load("https://maps.googleapis.com/maps/api/staticmap?zoom=16" +
                     "&markers=color:red%7Clabel:%7C" + latitude + "," + longitude + "&size=400x200&" +
                     "key=AIzaSyBnCtz4CuPtcZ-87zXLsYvH1BrkTTJ9eyw").into(ivMap);

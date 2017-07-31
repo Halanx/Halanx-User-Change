@@ -204,6 +204,7 @@ RegisterActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View view) {
 
+                            Log.e("OTP",otp.getText().toString() + " "+ random);
                             if (otp.getText().toString().equals(random)) {
                                 Toast.makeText(RegisterActivity.this, "User Verified", Toast.LENGTH_LONG).show();
                                 dialog.dismiss();
@@ -231,7 +232,7 @@ RegisterActivity extends AppCompatActivity {
                                     MSG91 msg91 = new MSG91("156475AdUYanwCiKI35970f67d");
                                     msg91.validate();
                                     msg91.getBalance("4");
-                                    msg91.composeMessage("HALANX", "Hi " + firstName + "! " + random + " is your One Time Password(OTP) for " +
+                                    msg91.composeMessage("HALANX", "Hi " + firstName + "! " + randomRes + " is your One Time Password(OTP) for " +
                                             "Halanx User App.");
                                     msg91.to(mobileNumber);
                                     msg91.setCountryCode("91");

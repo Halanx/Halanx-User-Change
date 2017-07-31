@@ -1,6 +1,6 @@
 package com.halanx.userapp.Activities;
 
-import android.graphics.Color;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -57,6 +57,7 @@ public class RatingActivity extends AppCompatActivity {
 
                 if(isRated){
                 Toast.makeText(RatingActivity.this, "Thank you for your feedback", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(RatingActivity.this,HomeActivity.class));
                 finish();}
                 else {
                     Toast.makeText(RatingActivity.this, "Please rate your shopper", Toast.LENGTH_SHORT).show();

@@ -69,7 +69,7 @@ public class SigninActivity extends AppCompatActivity {
     LoginButton fblogin;
     CallbackManager callbackManager;
     String name, email;
-    String[] namea;
+    String[] nameSplit;
     String mobile;
     String password;
     AccessToken accessToken;
@@ -248,13 +248,13 @@ public class SigninActivity extends AppCompatActivity {
         // FACEBOOK LOGIN
         fblogin = (LoginButton) findViewById(R.id.login_button);
         fblogin.setReadPermissions(Arrays.asList(
-                "public_profile", "email", "user_birthday", "user_friends",""));
+                "public_profile", "email", "user_birthday", "user_friends", ""));
         callbackManager = CallbackManager.Factory.create();
 
         fblogin.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(final LoginResult loginResult) {
-                Log.d("enter", "4");
+                Log.d("Facebook", "1");
 
 
                 GraphRequest request = GraphRequest.newMeRequest(
@@ -262,7 +262,7 @@ public class SigninActivity extends AppCompatActivity {
                         new GraphRequest.GraphJSONObjectCallback() {
                             @Override
                             public void onCompleted(JSONObject object, GraphResponse response) {
-
+                                Log.d("Facebook", "2");
 
                                 Log.v("LoginActivity", String.valueOf(loginResult.getAccessToken().getToken()));
                                 Log.d("fb_data", String.valueOf(object));
@@ -275,28 +275,61 @@ public class SigninActivity extends AppCompatActivity {
                                     email = object.getString("email");
                                     Log.d("FB NAME", email);
 //
-                                    namea = name.trim().split("\\s+");
-                                    Log.d("updatedata",namea[0]+","+namea[1]);
+                                    nameSplit = name.trim().split("\\s+");
+                                    Log.d("updatedata", nameSplit[0] + "," + nameSplit[1]);
+
                                     getSharedPreferences("fbdata", Context.MODE_PRIVATE).edit().
                                             putBoolean("fbloginned", true).apply();
-                                    Intent intent = new Intent(SigninActivity.this, RegisterActivity.class);
-                                    intent.putExtra("first_name", namea[0]);
-                                    intent.putExtra("last_name", namea[1]);
-                                    intent.putExtra("access_token",loginResult.getAccessToken().getToken());
-                                    intent.putExtra("email", email);
+
+                                    String url = "http://ec2-34-208-181-152.us-west-2.compute.amazonaws.com/users";
+                                    
 
 
-                                    startActivity(intent);
+
+
+                                    Volley.newRequestQueue(SigninActivity.this).add(new StringRequest(Request.Method.GET, url, new com.android.volley.Response.Listener<String>() {
+                                        @Override
+                                        public void onResponse(String response) {
+                                            Log.e("Response", response);
+                                            if (response.isEmpty()) {
+                                                Intent intent = new Intent(SigninActivity.this, RegisterActivity.class);
+                                                intent.putExtra("first_name", nameSplit[0]);
+                                                intent.putExtra("last_name", nameSplit[1]);
+                                                intent.putExtra("access_token", loginResult.getAccessToken().getToken());
+                                                intent.putExtra("email", email);
+                                                startActivity(intent);
+                                            } else {
+                                                getSharedPreferences("Login", Context.MODE_PRIVATE).edit().
+                                                        putString("UserInfo", response).putString("MobileNumber", mobile).
+                                                        putBoolean("first_login", true).
+                                                        putBoolean("Loginned", true).apply();
+
+                                                getSharedPreferences("status", Context.MODE_PRIVATE).edit().
+                                                        putBoolean("first_login", true).apply();
+
+                                                startActivity(new Intent(SigninActivity.this, MapsActivity.class));
+                                                finish();
+
+                                            }
+                                        }
+                                    }, new com.android.volley.Response.ErrorListener() {
+                                        @Override
+                                        public void onErrorResponse(VolleyError error) {
+                                            Log.d("Facebook", "3");
+                                        }
+                                    }));
 
 
 //                                   // 01/31/1980 format
                                 } catch (JSONException e) {
+                                    Log.d("Facebook", "4");
                                     Log.d("catch", e.toString());
                                     e.printStackTrace();
                                 }
                             }
 
                         });
+
                 Bundle parameters = new Bundle();
 
                 parameters.putString("fields", "id,name,email,gender,birthday");
@@ -305,9 +338,6 @@ public class SigninActivity extends AppCompatActivity {
 
 
 //                Toast.makeText(SigninActivity.this, "Login Successful!", Toast.LENGTH_SHORT).show();
-                Log.d("Intent", "1");
-
-
 
             }
 
@@ -316,12 +346,15 @@ public class SigninActivity extends AppCompatActivity {
             public void onCancel() {
                 // App code
                 Log.v("LoginActivity", "cancel");
+                Log.d("Facebook", "5");
+
             }
 
             @Override
             public void onError(FacebookException exception) {
                 // App code
-                Log.v("LoginActivity", exception.getCause().toString());
+                Log.d("Facebook ex", exception + " " + exception.getCause());
+                Log.d("Facebook", "6");
             }
         });
 

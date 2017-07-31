@@ -1,11 +1,13 @@
 package com.halanx.userapp.Activities;
 
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.ActionBar;
@@ -70,6 +72,7 @@ RegisterActivity extends AppCompatActivity {
     EditText otp;
     String regId;
     TextInputLayout passworddata;
+    Dialog dialog;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -97,7 +100,7 @@ RegisterActivity extends AppCompatActivity {
 
 
         //GIVING NULL POINT EXCEPTION
-        if(getSharedPreferences("fbdata", Context.MODE_PRIVATE).getBoolean("fbloginned",false)){
+        if (getSharedPreferences("fbdata", Context.MODE_PRIVATE).getBoolean("fbloginned", false)) {
 
             inputFname.setText(getIntent().getStringExtra("first_name"));
             inputLname.setText(getIntent().getStringExtra("last_name"));
@@ -106,7 +109,7 @@ RegisterActivity extends AppCompatActivity {
 
 
 //            getAccess token by getintent.getStringExtra("access_token")
-            
+
 
         }
 
@@ -136,17 +139,16 @@ RegisterActivity extends AppCompatActivity {
                 icode = inputIcode.getText().toString().trim();
 
 
-                if(getSharedPreferences("fbdata", Context.MODE_PRIVATE).getBoolean("fbloginned",false)) {
+                if (getSharedPreferences("fbdata", Context.MODE_PRIVATE).getBoolean("fbloginned", false)) {
 
 
                     if (mobileNumber.length() != 10) {
                         Toast.makeText(getApplicationContext(), "Please enter a valid mobile number", Toast.LENGTH_SHORT).show();
                         return;
                     }
-                }
-                else{
+                } else {
                     password = inputPassword.getText().toString().trim();
-                     if (TextUtils.isEmpty(password)) {
+                    if (TextUtils.isEmpty(password)) {
                         Toast.makeText(getApplicationContext(), "Enter password!", Toast.LENGTH_SHORT).show();
                         return;
                     }
@@ -155,15 +157,14 @@ RegisterActivity extends AppCompatActivity {
                 }
 
 
-
                 //  CHECKING ALL EDIT TEXT FIELDS
                 if (TextUtils.isEmpty(email)) {
                     Toast.makeText(getApplicationContext(), "Enter mobile address!", Toast.LENGTH_SHORT).show();
                     return;
-                } else if(!emailValidator(email)){
+                } else if (!emailValidator(email)) {
                     Toast.makeText(RegisterActivity.this, "Please enter valid email address", Toast.LENGTH_SHORT).show();
-                }
-                else if (password.length() < 6) {
+                    return;
+                } else if (password.length() < 6) {
                     Toast.makeText(getApplicationContext(), "Password too short, enter minimum 6 characters!", Toast.LENGTH_SHORT).show();
                     return;
                 } else if (TextUtils.isEmpty(firstName) || TextUtils.isEmpty(lastName)) {
@@ -178,13 +179,13 @@ RegisterActivity extends AppCompatActivity {
                 }
 
 
-
                 //Internet available
                 if (isNetworkAvailable(getApplicationContext())) {
 
 
                     random = sendOtp();
-                    final Dialog dialog = new Dialog(RegisterActivity.this);
+
+                    dialog = new Dialog(RegisterActivity.this);
                     dialog.setContentView(R.layout.activity_verify);
                     dialog.setTitle("OTP has been sent to" + mobileNumber);
                     dialog.setCanceledOnTouchOutside(false);
@@ -192,7 +193,7 @@ RegisterActivity extends AppCompatActivity {
                     Window window = dialog.getWindow();
                     window.setLayout(ActionBar.LayoutParams.FILL_PARENT, ActionBar.LayoutParams.WRAP_CONTENT);
 
-                    TextView tvResendOtp = (TextView) dialog.findViewById(R.id.resend);
+                    final TextView tvResendOtp = (TextView) dialog.findViewById(R.id.resend);
 
                     otp = (EditText) dialog.findViewById(R.id.enterOTP);
                     Button btnOtpSubmit = (Button) dialog.findViewById(R.id.btnOTPsubmit);
@@ -218,15 +219,40 @@ RegisterActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View view) {
 
-                            String randomResend = sendOtp();
-                            if (otp.getText().toString().equals(randomResend)) {
-                                Toast.makeText(RegisterActivity.this, "User Verified", Toast.LENGTH_LONG).show();
-                                dialog.dismiss();
-                                registration();
-                            } else {
-                                Toast.makeText(RegisterActivity.this, "Incorrect OTP entered", Toast.LENGTH_LONG).show();
-                                return;
-                            }
+
+                            tvResendOtp.setText("Resending OTP. Please wait.");
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    tvResendOtp.setText("Resend OTP");
+                                    Random r = new Random();
+                                    int randomOTP = r.nextInt(9999 - 1000) + 1000;
+                                    String randomRes = Integer.toString(randomOTP);
+                                    MSG91 msg91 = new MSG91("156475AdUYanwCiKI35970f67d");
+                                    msg91.validate();
+                                    msg91.getBalance("4");
+                                    msg91.composeMessage("HALANX", "Hi " + firstName + "! " + random + " is your One Time Password(OTP) for " +
+                                            "Halanx User App.");
+                                    msg91.to(mobileNumber);
+                                    msg91.setCountryCode("91");
+                                    msg91.setRoute("4");
+
+                                    msg91.send();
+                                    random = randomRes;
+
+                                }
+                            },2000);
+
+
+
+//                            if (otp.getText().toString().equals(randomRes)) {
+//                                Toast.makeText(RegisterActivity.this, "User Verified", Toast.LENGTH_LONG).show();
+//                                dialog.dismiss();
+//                                registration();
+//                            } else {
+//                                Toast.makeText(RegisterActivity.this, "Incorrect OTP entered", Toast.LENGTH_LONG).show();
+//                                return;
+//                            }
 
                         }
                     });
@@ -246,7 +272,7 @@ RegisterActivity extends AppCompatActivity {
     }
 
 
-    public  void registration(){
+    public void registration() {
 
         Call<Resp> call = clientRegister.register(firstName, lastName, email, password, mobileNumber, regId);
         call.enqueue(new Callback<Resp>() {
@@ -369,8 +395,7 @@ RegisterActivity extends AppCompatActivity {
 
     }
 
-    public boolean emailValidator(String email)
-    {
+    public boolean emailValidator(String email) {
         Pattern pattern;
         Matcher matcher;
         final String EMAIL_PATTERN = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";

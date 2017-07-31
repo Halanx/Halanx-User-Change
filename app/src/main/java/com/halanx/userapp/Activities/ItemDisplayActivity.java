@@ -11,10 +11,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.halanx.userapp.Interfaces.DataInterface;
 import com.halanx.userapp.POJO.CartItemPost;
 import com.halanx.userapp.R;
 import com.squareup.picasso.Picasso;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.List;
 
@@ -30,7 +37,7 @@ import static com.halanx.userapp.GlobalAccess.djangoBaseUrl;
 public class ItemDisplayActivity extends AppCompatActivity implements View.OnClickListener {
     EditText etQuantity;
     TextView plus, minus;
-    Boolean already =false;
+    Boolean already = false;
     Button cart;
     int i;
     String val;
@@ -42,10 +49,14 @@ public class ItemDisplayActivity extends AppCompatActivity implements View.OnCli
     String productName, productFeatures, productImage;
     Double productPrice;
     List<CartItemPost> items;
+    String mobileNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        SharedPreferences sharedPreferences = getSharedPreferences("Login", Context.MODE_PRIVATE);
+        mobileNumber = sharedPreferences.getString("MobileNumber", null);
 
         //GET PRODUCT DATA VIA INTENT
         productName = getIntent().getStringExtra("Name");
@@ -72,8 +83,7 @@ public class ItemDisplayActivity extends AppCompatActivity implements View.OnCli
 
         if (!(productImage.isEmpty())) {
             Picasso.with(getApplicationContext()).load(productImage).into(iv_productImage);
-        }
-        else {
+        } else {
             Picasso.with(getApplicationContext()).load(R.drawable.fav_48).into(iv_productImage);
         }
 
@@ -103,10 +113,11 @@ public class ItemDisplayActivity extends AppCompatActivity implements View.OnCli
         switch (view.getId()) {
             case R.id.increment:
 
-                if(i<10){
-                i++;
-                val = Integer.toString(i);
-                etQuantity.setText(val); }
+                if (i < 10) {
+                    i++;
+                    val = Integer.toString(i);
+                    etQuantity.setText(val);
+                }
                 break;
 
             case R.id.decrement:
@@ -119,14 +130,13 @@ public class ItemDisplayActivity extends AppCompatActivity implements View.OnCli
                 break;
             case R.id.bt_add_to_cart:
 
-                if(!already){
+                if (!already) {
                     already = true;
 
                     addCartItem();
 
-                }
-                else{
-                    Toast.makeText(getApplicationContext(),"Already added to cart",Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getApplicationContext(), "Already added to cart", Toast.LENGTH_SHORT).show();
                 }
                 break;
 
@@ -135,11 +145,13 @@ public class ItemDisplayActivity extends AppCompatActivity implements View.OnCli
                 if (!isFav) {
                     isFav = true;
                     Picasso.with(getApplicationContext()).load(R.drawable.fav_filled_48).into(iv_fav);
-                    Toast.makeText(ItemDisplayActivity.this, "Added to Favourites", Toast.LENGTH_SHORT).show();
+                    productFav(productID, "1");
+
                 } else {
                     isFav = false;
                     Picasso.with(getApplicationContext()).load(R.drawable.fav_48).into(iv_fav);
-                    Toast.makeText(ItemDisplayActivity.this, "Removed from Favourites", Toast.LENGTH_SHORT).show();
+                    productFav(productID, "0");
+
                 }
 
                 break;
@@ -149,12 +161,40 @@ public class ItemDisplayActivity extends AppCompatActivity implements View.OnCli
     }
 
 
+    private void productFav(Integer productID, final String option) {
+        //option is 0 or 1 -
+        //1 for adding , 0 for removing
+
+        String url = "http://ec2-34-208-181-152.us-west-2.compute.amazonaws.com/users/favs/"+mobileNumber+"/" + option + "/";
+        JSONObject obj = new JSONObject();
+        try {
+            obj.put("LastItem", productID);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        Volley.newRequestQueue(ItemDisplayActivity.this).add(new JsonObjectRequest(Request.Method.PATCH, url, obj, new com.android.volley.Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                if (option.equals("1")) {
+                    Toast.makeText(ItemDisplayActivity.this, "Added to Favourites", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(ItemDisplayActivity.this, "Removed from Favourites", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        }, new com.android.volley.Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(ItemDisplayActivity.this, "Network error", Toast.LENGTH_SHORT).show();
+            }
+        }));
+    }
+
+
     void addCartItem() {
 
-        SharedPreferences sharedPreferences = getSharedPreferences("Login", Context.MODE_PRIVATE);
-        String mobileNumber = sharedPreferences.getString("MobileNumber", null);
 
-        CartItemPost item = new CartItemPost(Long.parseLong(mobileNumber), Double.parseDouble(val), productID,null);
+        CartItemPost item = new CartItemPost(Long.parseLong(mobileNumber), Double.parseDouble(val), productID, null);
         Retrofit.Builder builder = new Retrofit.Builder().baseUrl(djangoBaseUrl).
                 addConverterFactory(GsonConverterFactory.create());
 
@@ -167,8 +207,7 @@ public class ItemDisplayActivity extends AppCompatActivity implements View.OnCli
             public void onResponse(Call<CartItemPost> call, Response<CartItemPost> response) {
 
 
-                Toast.makeText(ItemDisplayActivity.this, "Added item " + productName +"to your cart!", Toast.LENGTH_SHORT).show();
-
+                Toast.makeText(ItemDisplayActivity.this, "Added item " + productName + "to your cart!", Toast.LENGTH_SHORT).show();
 
 
             }
@@ -181,8 +220,6 @@ public class ItemDisplayActivity extends AppCompatActivity implements View.OnCli
 
 
     }
-
-
 
 
 }

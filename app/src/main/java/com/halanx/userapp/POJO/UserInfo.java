@@ -5,6 +5,8 @@ package com.halanx.userapp.POJO;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 public class UserInfo {
 
     @SerializedName("id")
@@ -49,8 +51,12 @@ public class UserInfo {
     @SerializedName("n")
     @Expose
     private Integer n;
-
-
+    @SerializedName("LastItem")
+    @Expose
+    private Integer lastItem;
+    @SerializedName("FavoriteItems")
+    @Expose
+    private List<ProductInfo> favItems;
 
     public UserInfo(long phoneNo, String emailId, String firstName, String lastName, String password, String address) {
         this.phoneNo = phoneNo;
@@ -61,6 +67,21 @@ public class UserInfo {
         this.address = address;
     }
 
+    public Integer getLastItem() {
+        return lastItem;
+    }
+
+    public void setLastItem(Integer lastItem) {
+        this.lastItem = lastItem;
+    }
+
+    public List<ProductInfo> getFavItems() {
+        return favItems;
+    }
+
+    public void setFavItems(List<ProductInfo> favItems) {
+        this.favItems = favItems;
+    }
 
     public Integer getId() {
         return id;

@@ -28,11 +28,21 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
+import com.facebook.GraphRequest;
+import com.facebook.GraphResponse;
+import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.halanx.userapp.Interfaces.DataInterface;
 import com.halanx.userapp.POJO.Resp;
 import com.halanx.userapp.R;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.Arrays;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -236,6 +246,7 @@ public class SigninActivity extends AppCompatActivity {
 
 
         // FACEBOOK LOGIN
+
 //        fblogin = (LoginButton) findViewById(R.id.login_button);
 //        fblogin.setReadPermissions(Arrays.asList(
 //                "public_profile", "email", "user_birthday", "user_friends",""));
@@ -342,6 +353,118 @@ public class SigninActivity extends AppCompatActivity {
 //                Log.d("Facebook", "6");
 //            }
 //        });
+        fblogin = (LoginButton) findViewById(R.id.login_button);
+        fblogin.setReadPermissions(Arrays.asList(
+                "public_profile", "email", "user_birthday", "user_friends", ""));
+        callbackManager = CallbackManager.Factory.create();
+
+        fblogin.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+            @Override
+            public void onSuccess(final LoginResult loginResult) {
+                Log.d("Facebook", "1");
+
+
+                GraphRequest request = GraphRequest.newMeRequest(
+                        loginResult.getAccessToken(),
+                        new GraphRequest.GraphJSONObjectCallback() {
+                            @Override
+                            public void onCompleted(JSONObject object, GraphResponse response) {
+                                Log.d("Facebook", "2");
+
+                                Log.v("LoginActivity", String.valueOf(loginResult.getAccessToken().getToken()));
+                                Log.d("fb_data", String.valueOf(object));
+
+                                try {// Application code
+
+                                    name = object.getString("name");
+                                    Log.d("FB NAME", name);
+
+                                    email = object.getString("email");
+                                    Log.d("FB NAME", email);
+//
+                                    nameSplit = name.trim().split("\\s+");
+                                    Log.d("updatedata", nameSplit[0] + "," + nameSplit[1]);
+
+                                    getSharedPreferences("fbdata", Context.MODE_PRIVATE).edit().
+                                            putBoolean("fbloginned", true).apply();
+
+                                    String url = "http://ec2-34-208-181-152.us-west-2.compute.amazonaws.com/users";
+                                    
+
+
+
+
+                                    Volley.newRequestQueue(SigninActivity.this).add(new StringRequest(Request.Method.GET, url, new com.android.volley.Response.Listener<String>() {
+                                        @Override
+                                        public void onResponse(String response) {
+                                            Log.e("Response", response);
+                                            if (response.isEmpty()) {
+                                                Intent intent = new Intent(SigninActivity.this, RegisterActivity.class);
+                                                intent.putExtra("first_name", nameSplit[0]);
+                                                intent.putExtra("last_name", nameSplit[1]);
+                                                intent.putExtra("access_token", loginResult.getAccessToken().getToken());
+                                                intent.putExtra("email", email);
+                                                startActivity(intent);
+                                            } else {
+                                                getSharedPreferences("Login", Context.MODE_PRIVATE).edit().
+                                                        putString("UserInfo", response).putString("MobileNumber", mobile).
+                                                        putBoolean("first_login", true).
+                                                        putBoolean("Loginned", true).apply();
+
+                                                getSharedPreferences("status", Context.MODE_PRIVATE).edit().
+                                                        putBoolean("first_login", true).apply();
+
+                                                startActivity(new Intent(SigninActivity.this, MapsActivity.class));
+                                                finish();
+
+                                            }
+                                        }
+                                    }, new com.android.volley.Response.ErrorListener() {
+                                        @Override
+                                        public void onErrorResponse(VolleyError error) {
+                                            Log.d("Facebook", "3");
+                                        }
+                                    }));
+
+
+//                                   // 01/31/1980 format
+                                } catch (JSONException e) {
+                                    Log.d("Facebook", "4");
+                                    Log.d("catch", e.toString());
+                                    e.printStackTrace();
+                                }
+                            }
+
+                        });
+
+                Bundle parameters = new Bundle();
+
+                parameters.putString("fields", "id,name,email,gender,birthday");
+                request.setParameters(parameters);
+                request.executeAsync();
+
+
+//                Toast.makeText(SigninActivity.this, "Login Successful!", Toast.LENGTH_SHORT).show();
+
+            }
+
+
+            @Override
+            public void onCancel() {
+                // App code
+                Log.v("LoginActivity", "cancel");
+                Log.d("Facebook", "5");
+
+            }
+
+            @Override
+            public void onError(FacebookException exception) {
+                // App code
+                Log.d("Facebook ex", exception + " " + exception.getCause());
+                Log.d("Facebook", "6");
+            }
+        });
+
 
 //                GraphRequest request = GraphRequest.newMeRequest(loginResult.getAccessToken(),
 //                        new GraphRequest.GraphJSONObjectCallback() {

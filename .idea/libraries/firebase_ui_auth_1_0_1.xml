@@ -6,7 +6,7 @@
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.firebaseui/firebase-ui-auth/1.0.1/5d88971046fac0be642191aef4965893a408138c/firebase-ui-auth-1.0.1-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/caches/modules-2/files-2.1/com.firebaseui/firebase-ui-auth/1.0.1/5d88971046fac0be642191aef4965893a408138c/firebase-ui-auth-1.0.1-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

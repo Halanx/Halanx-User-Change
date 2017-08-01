@@ -68,6 +68,7 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
 
     String date, timings;
 
+    String mobileNumber;
     String addressDetails;
     EditText line1, line2, line3;
 
@@ -132,7 +133,7 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
 
 
         SharedPreferences sharedPreferences = getSharedPreferences("Login", Context.MODE_PRIVATE);
-        final String mobileNumber = sharedPreferences.getString("MobileNumber", null);
+         String mobileNumber = sharedPreferences.getString("MobileNumber", null);
 
 
         Call<List<CartItem>> call = client.getUserCartItems(mobileNumber);
@@ -150,6 +151,7 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
 
                         if (!items.get(i).getRemovedFromCart()) {
                             activeItems.add(items.get(i));
+
                         }
                     }
 
@@ -157,34 +159,10 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
                     Log.d("TAG", "If");
                     progressBar.setVisibility(View.INVISIBLE);
                     recyclerView = (RecyclerView) findViewById(R.id.cart_recycler_view);
-                    adapterTemp = new CartsAdapter(activeItems, getApplicationContext());
+                    adapterTemp = new CartsAdapter(activeItems, getApplicationContext(),tvTotal);
                     RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
                     recyclerView.setAdapter(adapterTemp);
                     recyclerView.setLayoutManager(layoutManager);
-
-
-                    Call<CartsInfo> callCart = client.getCartDetails(mobileNumber);
-                    callCart.enqueue(new Callback<CartsInfo>() {
-                        @Override
-                        public void onResponse(Call<CartsInfo> call, Response<CartsInfo> response) {
-                            CartsInfo cart = response.body();
-
-                            String total = cart.getTotal().toString();
-                            String del = cart.getDeliveryCharges().toString();
-
-
-                            tvTotal.setText(total);
-                            tvDelivery.setText(del);
-
-
-
-                        }
-
-                        @Override
-                        public void onFailure(Call<CartsInfo> call, Throwable t) {
-
-                        }
-                    });
 
                 } else {
                     progressBar.setVisibility(View.INVISIBLE);
@@ -280,7 +258,7 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
                     @Override
                     public void onClick(View view) {
 
-                        if (line1.getText().equals("") || line2.getText().equals("") || line3.getText().equals("")) {
+                        if ((line1.getText().equals(" ") || line2.getText().equals(" ") || line3.getText().equals(" "))) {
 
                             Toast.makeText(getApplicationContext(), "Enter Your Address", Toast.LENGTH_SHORT).show();
 
@@ -330,6 +308,28 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
                 Animation slideDown = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slide_down);
 
                 if (detailslayout.getVisibility() == View.GONE) {
+                    SharedPreferences sharedPreferences = getSharedPreferences("Login", Context.MODE_PRIVATE);
+                    String mobileNumber = sharedPreferences.getString("MobileNumber", null);
+                    Call<CartsInfo> callCart = client.getCartDetails(mobileNumber);
+                    callCart.enqueue(new Callback<CartsInfo>() {
+                        @Override
+                        public void onResponse(Call<CartsInfo> call, Response<CartsInfo> response) {
+                            CartsInfo cart = response.body();
+
+                            String total = cart.getTotal().toString();
+                            String del = cart.getDeliveryCharges().toString();
+
+                            tvTotal.setText(total);
+                            tvDelivery.setText(del);
+
+                        }
+
+                        @Override
+                        public void onFailure(Call<CartsInfo> call, Throwable t) {
+                            Log.d("errror", String.valueOf(t));
+
+                        }
+                    });
 
                     detailslayout.startAnimation(slideUp);
                     detailslayout.setVisibility(View.VISIBLE);
@@ -337,6 +337,9 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
 
                     btnDelivery.setVisibility(View.GONE);
                     btnconfirm.setVisibility(View.VISIBLE);
+
+
+
 
                 }
 

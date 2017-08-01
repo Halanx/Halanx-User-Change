@@ -40,8 +40,9 @@ public class CartsAdapter extends RecyclerView.Adapter<CartsAdapter.TempViewHold
 
 
 
-    public CartsAdapter(List<CartItem> listItems, Context cont) {
+    public CartsAdapter(List<CartItem> listItems, Context cont, TextView tvTotal) {
         this.listItems = listItems;
+        totalitems = tvTotal;
         this.c = cont;
     }
 
@@ -124,7 +125,6 @@ public class CartsAdapter extends RecyclerView.Adapter<CartsAdapter.TempViewHold
                     Volley.newRequestQueue(c).add(new JsonObjectRequest(Request.Method.PATCH, url, obj, new com.android.volley.Response.Listener<JSONObject>() {
                         @Override
                         public void onResponse(JSONObject response) {
-
                             Toast.makeText(c, "Item removed", Toast.LENGTH_SHORT).show();
 
                         }

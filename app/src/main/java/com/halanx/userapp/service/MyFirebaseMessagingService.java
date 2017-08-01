@@ -34,7 +34,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     PendingIntent piResulta;
     private NotificationUtils notificationUtils;
     private android.support.v4.app.NotificationCompat.Style bigPictureStyle;
-    long[] pattern = {0, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500};
+    long[] pattern = {0, 1000, 500};
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
         Log.e(TAG, "From: " + remoteMessage);
@@ -92,8 +92,8 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         Log.e(TAG, "push json: " + json.toString());
 
         try {
-            String message = json.getString("type");
-            String batch_id = json.getString("BatchId");
+            String message = json.getString("type").trim();
+            String batch_id = json.getString("BatchId").trim();
             Log.d("batch_id",batch_id);
             getSharedPreferences("BatchData",Context.MODE_PRIVATE).edit().putString("BatchID", batch_id).apply();
 

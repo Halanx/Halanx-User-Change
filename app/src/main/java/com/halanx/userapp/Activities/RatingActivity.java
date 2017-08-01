@@ -41,22 +41,25 @@ public class RatingActivity extends AppCompatActivity {
         rb.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
-                if (b) {
-                    isRated = true;
-                }
 
 //                Toast.makeText(RatingActivity.this, "Rating is "+ v, Toast.LENGTH_SHORT).show();
 //                tvRating.setText(""+v+" "+b);
 
                 if (v == 1.0) {
                     tvRating.setText("1 star");
+                    isRated = true;
+
                 } else if (v == 2.0) {
+                    isRated = true;
                     tvRating.setText("2 stars");
                 } else if (v == 3.0) {
+                    isRated = true;
                     tvRating.setText("3 stars");
                 } else if (v == 4.0) {
+                    isRated = true;
                     tvRating.setText("4 stars");
                 } else if (v == 5.0) {
+                    isRated = true;
                     tvRating.setText("5 stars");
                 }
                 final_rating = v;
@@ -79,7 +82,6 @@ public class RatingActivity extends AppCompatActivity {
                     JSONObject obj = new JSONObject();
                     try {
                         obj.put("LatestRating", final_rating);
-                        obj.put("n","6");
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }

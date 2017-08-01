@@ -119,24 +119,27 @@ public class MainFragment extends Fragment implements AdapterView.OnItemSelected
                 storesList = response.body();
                 storeNames = new ArrayList<>();
 
-                for (int i = 0; i < storesList.size(); i++) {
+                if(storesList.size()!=0) {
+                    for (int i = 0; i < storesList.size(); i++) {
 
-                    if (storesList.get(i) != null) {
-                        storeNames.add(storesList.get(i).getStoreName());
+                        if (storesList.get(i) != null) {
+                            storeNames.add(storesList.get(i).getStoreName());
+                        }
                     }
-                }
 
-                ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, storeNames);
-                spinnerAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
-                storeSpinner.setAdapter(spinnerAdapter);
-                storeSpinner.setSelection(storePosition);
-                getProductsFromStore(storeID);
+                    ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, storeNames);
+                    spinnerAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+                    storeSpinner.setAdapter(spinnerAdapter);
+                    storeSpinner.setSelection(storePosition);
+                    getProductsFromStore(storeID);
+                }
 
             }
 
             @Override
             public void onFailure(Call<List<StoreInfo>> call, Throwable t) {
 
+                return;
             }
         });
 

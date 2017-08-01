@@ -12,6 +12,7 @@ import android.util.Log;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 import com.halanx.userapp.Activities.HomeActivity;
+import com.halanx.userapp.Activities.OrdersActivity;
 import com.halanx.userapp.Activities.RatingActivity;
 import com.halanx.userapp.R;
 import com.halanx.userapp.app.Config;
@@ -30,6 +31,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     private static final String TAG = MyFirebaseMessagingService.class.getSimpleName();
 
+    PendingIntent piResulta;
     private NotificationUtils notificationUtils;
     private android.support.v4.app.NotificationCompat.Style bigPictureStyle;
     long[] pattern = {0, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500};
@@ -90,6 +92,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         Log.e(TAG, "push json: " + json.toString());
 
         try {
+            String message = json.getString("type");
             String batch_id = json.getString("BatchId");
             Log.d("batch_id",batch_id);
             getSharedPreferences("BatchData",Context.MODE_PRIVATE).edit().putString("BatchID", batch_id).apply();
@@ -112,13 +115,23 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 intent.addCategory(Intent.CATEGORY_HOME);
 
-                Intent resultIntenta = new Intent(this, RatingActivity.class);
+                if(message == "BatchAccepted") {
+                    Intent resultIntenta = new Intent(this, OrdersActivity.class);
 
-                resultIntenta.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
-                        | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                PendingIntent piResulta = PendingIntent.getActivity(this,
-                        (int) Calendar.getInstance().getTimeInMillis(), resultIntenta, 0);
+                    resultIntenta.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+                            | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    PendingIntent piResulta = PendingIntent.getActivity(this,
+                            (int) Calendar.getInstance().getTimeInMillis(), resultIntenta, 0);
+                }
+                else {
 
+                    Intent resultIntenta = new Intent(this, RatingActivity.class);
+
+                    resultIntenta.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+                            | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    piResulta = PendingIntent.getActivity(this,
+                            (int) Calendar.getInstance().getTimeInMillis(), resultIntenta, 0);
+                }
 
 // Assign big picture notification
 
@@ -126,7 +139,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                         (NotificationCompat.Builder) new NotificationCompat.Builder(this)
                                 .setSmallIcon(R.drawable.logochange)
                                 .setContentTitle("Halanx")
-                                .setContentText("Hey Buddy Shopper has Recieved your order")
+                                .setContentText("Hey Buddy " + message)
                                 .setSound(RingtoneManager.getValidRingtoneUri(getApplicationContext()))
                                 .setStyle(bigPictureStyle)
                                 .setContentIntent(piResulta)
@@ -138,7 +151,6 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 // Gets an instance of the NotificationManager service
                 NotificationManager notificationManager =(NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
-                builder.build().flags |= builder.build().FLAG_INSISTENT;
 
 //to post your notification to the notification bar
                 notificationManager.notify(0, builder.build());

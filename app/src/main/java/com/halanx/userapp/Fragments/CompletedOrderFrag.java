@@ -86,7 +86,7 @@ public class CompletedOrderFrag extends Fragment {
                 if (!allOrdersList.isEmpty()) {
                     completedOrderList = new ArrayList<>();
 
-                    for (int i = 0; i < allOrdersList.size(); i++) {
+                    for (int i = allOrdersList.size()-1; i >= 0  ; i--) {
                         if (allOrdersList.get(i).getIsDelivered()) {
                             //Completed order = isDelivered is true
                             completedOrderList.add(allOrdersList.get(i));

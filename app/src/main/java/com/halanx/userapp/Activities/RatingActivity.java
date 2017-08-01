@@ -1,5 +1,6 @@
 package com.halanx.userapp.Activities;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 import com.android.volley.Request;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.halanx.userapp.Interfaces.DataInterface;
 import com.halanx.userapp.R;
@@ -30,6 +32,7 @@ public class RatingActivity extends AppCompatActivity {
     float final_rating;
     Retrofit.Builder builder;
     Retrofit retrofit;
+    String mobileNumber;
     DataInterface client;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +41,38 @@ public class RatingActivity extends AppCompatActivity {
 
         rb = (RatingBar) findViewById(R.id.rb_rating);
         tvRating = (TextView) findViewById(R.id.tv_num_stars);
+
+
+        String id = getSharedPreferences("BatchData", Context.MODE_PRIVATE).getString("BatchID", null);
+
+
+
+        Volley.newRequestQueue(RatingActivity.this).add(new StringRequest(Request.Method.GET,
+                "http://ec2-34-208-181-152.us-west-2.compute.amazonaws.com/batch/" + id,
+                new com.android.volley.Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject json = new JSONObject(response);
+                            mobileNumber = json.getString("PermanentShopper");
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+
+                    }
+                }, new com.android.volley.Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(RatingActivity.this, "Network error", Toast.LENGTH_SHORT).show();
+
+            }
+        }));
+
+
+
+
+
         rb.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
@@ -74,10 +109,10 @@ public class RatingActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 if(isRated){
-                    String mobileNumber = "9711556178" ;
 
-                    String url = "http://ec2-34-208-181-152.us-west-2.compute.amazonaws.com/shoppers/" +
-                          mobileNumber +"/";
+
+
+                    String url = "http://ec2-34-208-181-152.us-west-2.compute.amazonaws.com/shoppers/" + mobileNumber +"/";
 
                     JSONObject obj = new JSONObject();
                     try {

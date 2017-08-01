@@ -94,7 +94,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         try {
             String message = json.getString("type").trim();
             String batch_id = json.getString("BatchId").trim();
-            Log.d("batch_id",batch_id);
+            Log.d("batch_id",","+message);
             getSharedPreferences("BatchData",Context.MODE_PRIVATE).edit().putString("BatchID", batch_id).apply();
 
 
@@ -115,12 +115,12 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 intent.addCategory(Intent.CATEGORY_HOME);
 
-                if(message == "BatchAccepted") {
+                if(message.equals("BatchAccepted")) {
                     Intent resultIntenta = new Intent(this, OrdersActivity.class);
 
                     resultIntenta.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
-                            | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    PendingIntent piResulta = PendingIntent.getActivity(this,
+                            );
+                    piResulta = PendingIntent.getActivity(this,
                             (int) Calendar.getInstance().getTimeInMillis(), resultIntenta, 0);
                 }
                 else {
@@ -141,7 +141,6 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                                 .setContentTitle("Halanx")
                                 .setContentText("Hey Buddy " + message)
                                 .setSound(RingtoneManager.getValidRingtoneUri(getApplicationContext()))
-                                .setStyle(bigPictureStyle)
                                 .setContentIntent(piResulta)
                                 .setVibrate(pattern)
                                 .setOngoing(true)

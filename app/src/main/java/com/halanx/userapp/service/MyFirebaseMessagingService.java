@@ -50,24 +50,20 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         if (remoteMessage.getData().size() > 0) {
             Log.e(TAG, "Data Payload: " + remoteMessage.getData().toString());
             String data = remoteMessage.getData().toString();
-            Log.d("dataat16", String.valueOf(data.charAt(157))+String.valueOf(data.charAt(158)));
-            data = "[" +data + "]";
-            Log.d("final String",data);
-            String data_value = remoteMessage.getData().get("data");
-            Log.d("getacces", String.valueOf(data_value.charAt(156)));
-
-            char[] value = data_value.toCharArray();
-            value[150] = 'k';
-            String new_string = String.valueOf(value);
-            Log.d("getacces",new_string);
+//            Log.d("dataat16", String.valueOf(data.charAt(157))+String.valueOf(data.charAt(158)));
+//            data = "[" +data + "]";
+//            Log.d("final String",data);
+//            String data_value = remoteMessage.getData().get("data");
+//            Log.d("getacces", String.valueOf(data_value.charAt(156)));
+//
+//            char[] value = data_value.toCharArray();
+//            value[150] = 'k';
+//            String new_string = String.valueOf(value);
+//            Log.d("getacces",new_string);
 
 
             try {
-                Log.d("datapack","done");
-                JSONObject json = new JSONObject(new_string);
-                Log.d("datapack","done");
-                getSharedPreferences("BatchData",Context.MODE_PRIVATE).edit().putString("Batch",remoteMessage.getData().toString()).apply();
-                Log.d("jsondata", String.valueOf(json));
+                JSONObject json = new JSONObject(data);
                 handleDataMessage(json);
             } catch (Exception e) {
                 Log.e(TAG, "Exception:" + e);
@@ -94,18 +90,16 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         Log.e(TAG, "push json: " + json.toString());
 
         try {
+            String batch_id = json.getString("BatchId");
+            Log.d("batch_id",batch_id);
+            getSharedPreferences("BatchData",Context.MODE_PRIVATE).edit().putString("BatchID", batch_id).apply();
 
 
             if (!NotificationUtils.isAppIsInBackground(getApplicationContext())) {
-                // app is in foreground, broadcast the push message
-                Intent pushNotification = new Intent(Config.PUSH_NOTIFICATION);
-                //     pushNotification.putExtra("message", message);
-                LocalBroadcastManager.getInstance(this).sendBroadcast(pushNotification);
 
-                startActivity(new Intent(MyFirebaseMessagingService.this, HomeActivity.class));
-                // play notification sound
-                NotificationUtils notificationUtils = new NotificationUtils(getApplicationContext());
-                notificationUtils.playNotificationSound();
+                startActivity(new Intent(MyFirebaseMessagingService.this,RatingActivity.class));
+
+                // app is in foreground, broadcast the push message
             } else {
                 Intent resultIntent = new Intent(this, HomeActivity.class);
 
@@ -132,7 +126,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                         (NotificationCompat.Builder) new NotificationCompat.Builder(this)
                                 .setSmallIcon(R.drawable.logochange)
                                 .setContentTitle("Halanx")
-                                .setContentText("Hey Buddy Your Order has recieved")
+                                .setContentText("Hey Buddy Shopper has Recieved your order")
                                 .setSound(RingtoneManager.getValidRingtoneUri(getApplicationContext()))
                                 .setStyle(bigPictureStyle)
                                 .setContentIntent(piResulta)

@@ -4,7 +4,6 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.media.RingtoneManager;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.NotificationCompat;
@@ -18,7 +17,6 @@ import com.halanx.userapp.R;
 import com.halanx.userapp.app.Config;
 import com.halanx.userapp.util.NotificationUtils;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.Calendar;
@@ -37,7 +35,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     long[] pattern = {0, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500, 2000, 500};
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
-        Log.e(TAG, "From: " + remoteMessage.getFrom());
+        Log.e(TAG, "From: " + remoteMessage);
 
         if (remoteMessage == null)
             return;
@@ -51,17 +49,28 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         // Check if message contains a data payload.
         if (remoteMessage.getData().size() > 0) {
             Log.e(TAG, "Data Payload: " + remoteMessage.getData().toString());
+            String data = remoteMessage.getData().toString();
+            Log.d("dataat16", String.valueOf(data.charAt(157))+String.valueOf(data.charAt(158)));
+            data = "[" +data + "]";
+            Log.d("final String",data);
+            String data_value = remoteMessage.getData().get("data");
+            Log.d("getacces", String.valueOf(data_value.charAt(156)));
+
+            char[] value = data_value.toCharArray();
+            value[150] = 'k';
+            String new_string = String.valueOf(value);
+            Log.d("getacces",new_string);
 
 
             try {
                 Log.d("datapack","done");
-                JSONObject json = new JSONObject(remoteMessage.getData().toString());
+                JSONObject json = new JSONObject(new_string);
                 Log.d("datapack","done");
                 getSharedPreferences("BatchData",Context.MODE_PRIVATE).edit().putString("Batch",remoteMessage.getData().toString()).apply();
                 Log.d("jsondata", String.valueOf(json));
                 handleDataMessage(json);
             } catch (Exception e) {
-                Log.e(TAG, "Exception: " + e);
+                Log.e(TAG, "Exception:" + e);
             }
         }
     }
@@ -86,21 +95,6 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
         try {
 
-            String title = json.getString("id");
-
-            SharedPreferences pref = getApplicationContext().getSharedPreferences(Config.SHARED_PREF, 0);
-            SharedPreferences.Editor editor = pref.edit();
-            editor.putString("json_data", String.valueOf(json));
-            editor.putString("batch_id",title);
-            editor.commit();
-
-
-
-
-
-
-
-            Log.e(TAG, "title: " + title);
 
             if (!NotificationUtils.isAppIsInBackground(getApplicationContext())) {
                 // app is in foreground, broadcast the push message
@@ -168,8 +162,6 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 //                    showNotificationMessageWithBigImage(getApplicationContext(), title, message, resultIntent);
 //                }
             }
-        } catch (JSONException e) {
-            Log.e(TAG, "Json Exception: " + e.getMessage());
         } catch (Exception e) {
             Log.e(TAG, "Exception: " + e.getMessage());
         }

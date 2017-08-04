@@ -17,12 +17,15 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.halanx.userapp.Interfaces.DataInterface;
+import com.halanx.userapp.POJO.CartItem;
 import com.halanx.userapp.POJO.CartItemPost;
 import com.halanx.userapp.R;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -49,6 +52,9 @@ public class ItemDisplayActivity extends AppCompatActivity implements View.OnCli
     String productName, productFeatures, productImage;
     Double productPrice;
     String mobileNumber;
+    List<CartItem> Citems;
+
+
 
 
     @Override
@@ -209,7 +215,6 @@ public class ItemDisplayActivity extends AppCompatActivity implements View.OnCli
                 cart.setTextColor(Color.parseColor("#fafafa"));
                 cart.setBackgroundColor(Color.parseColor("#b6413f"));
             }
-
             @Override
             public void onFailure(Call<CartItemPost> call, Throwable t) {
 

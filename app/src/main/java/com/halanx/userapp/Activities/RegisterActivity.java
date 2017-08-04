@@ -1,7 +1,6 @@
 package com.halanx.userapp.Activities;
 
 import android.app.Dialog;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -109,7 +108,6 @@ RegisterActivity extends AppCompatActivity {
 
 
 //            getAccess token by getintent.getStringExtra("access_token")
-
 
         }
 
@@ -312,8 +310,8 @@ RegisterActivity extends AppCompatActivity {
                                             putBoolean("first_login", true).apply();
 
 
-                                    progressRegister.setVisibility(View.GONE);
                                     startActivity(new Intent(RegisterActivity.this, MapsActivity.class));
+                                    progressRegister.setVisibility(View.GONE);
                                     finish();
 
                                 }
@@ -330,7 +328,7 @@ RegisterActivity extends AppCompatActivity {
                         @Override
                         public void onFailure(Call<UserInfo> call, Throwable t) {
 
-                            Toast.makeText(RegisterActivity.this, "Network error", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(RegisterActivity.this, "Failed to register", Toast.LENGTH_SHORT).show();
                         }
                     });
 
@@ -340,7 +338,7 @@ RegisterActivity extends AppCompatActivity {
                 //REGISTRATION FAILED ON PHP
                 else {
 
-                    Toast.makeText(RegisterActivity.this, "Registration Failed", Toast.LENGTH_LONG).show();
+                    Toast.makeText(RegisterActivity.this, "Already Registered", Toast.LENGTH_LONG).show();
                 }
 
 

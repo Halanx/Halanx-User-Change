@@ -35,14 +35,13 @@ public class CartsAdapter extends RecyclerView.Adapter<CartsAdapter.TempViewHold
 
     List<CartItem> listItems = new ArrayList<>();
     Context c;
-    TextView totalitems;
+    TextView totalitems,subtotal,delivery;
 
 
 
 
-    public CartsAdapter(List<CartItem> listItems, Context cont, TextView tvTotal) {
+    public CartsAdapter(List<CartItem> listItems, Context cont) {
         this.listItems = listItems;
-        totalitems = tvTotal;
         this.c = cont;
     }
 

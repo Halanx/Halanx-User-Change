@@ -13,6 +13,9 @@ public class CartsInfo {
     @SerializedName("Total")
     @Expose
     private Double total;
+    @SerializedName("SubTotal")
+    @Expose
+    private Double subtotal;
     @SerializedName("UserPhone")
     @Expose
     private Double userPhone;
@@ -51,6 +54,14 @@ public class CartsInfo {
 
     public void setTotal(Double total) {
         this.total = total;
+    }
+
+    public Double getSubtotal() {
+        return subtotal;
+    }
+
+    public void setSubtotal(Double subtotal) {
+        this.subtotal = subtotal;
     }
 
     public Double getUserPhone() {

@@ -139,7 +139,7 @@ public class MainFragment extends Fragment implements AdapterView.OnItemSelected
             @Override
             public void onFailure(Call<List<StoreInfo>> call, Throwable t) {
 
-                return;
+                Log.d("servererror", String.valueOf(true));
             }
         });
 

@@ -7,8 +7,8 @@ android {
         applicationId "com.halanx.userapp"
         minSdkVersion 21
         targetSdkVersion 24
-        versionCode 10
-        versionName "2.0"
+        versionCode 14
+        versionName "2.4"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
     }
@@ -23,15 +23,22 @@ android {
     }
 }
 repositories {
+    maven { url "https://raw.github.com/PayU/paytouch-android/mvn-repo/" }
     mavenCentral()
 }
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+    //    compile 'com.github.akarthik10:payumoney-sdkui:'
+
+    //    compile 'com.payu.india:payu-sdk:4.4.1'
+
+    //    compile 'com.payu.magicretry:magicretry:1.0.4'
+
+    //    compile 'com.payu.custombrowser:payu-custom-browser:6.1.1'
     compile 'devs.mulham.horizontalcalendar:horizontalcalendar:1.1.7'
     compile 'com.google.android.gms:play-services:10.0.1'
     compile 'com.google.android.gms:play-services-maps:10.0.1'
@@ -56,5 +63,6 @@ dependencies {
     compile 'com.akexorcist:googledirectionlibrary:1.0.5'
     testCompile 'junit:junit:4.12'
     androidTestCompile 'junit:junit:4.12'
+    compile project(':sdkui')
 }
 apply plugin: 'com.google.gms.google-services'

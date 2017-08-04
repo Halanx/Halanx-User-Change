@@ -2,6 +2,7 @@ package com.halanx.userapp.Activities;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -16,6 +17,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.halanx.userapp.Interfaces.DataInterface;
+import com.halanx.userapp.POJO.CartItem;
 import com.halanx.userapp.POJO.CartItemPost;
 import com.halanx.userapp.R;
 import com.squareup.picasso.Picasso;
@@ -45,11 +47,15 @@ public class ItemDisplayActivity extends AppCompatActivity implements View.OnCli
     TextView tv_productName, tv_productPrice;
     Boolean isFav;
     Integer productID;
+    TextView itemcount;
 
     String productName, productFeatures, productImage;
     Double productPrice;
     List<CartItemPost> items;
     String mobileNumber;
+    List<CartItem> Citems;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +74,8 @@ public class ItemDisplayActivity extends AppCompatActivity implements View.OnCli
         setTitle(productName);
         setContentView(R.layout.activity_item_display);
 
+        itemcount = (TextView) findViewById(R.id.itemcount);
+
         etQuantity = (EditText) findViewById(R.id.quantity);
         etQuantity.setText("1");
         plus = (TextView) findViewById(R.id.increment);
@@ -75,11 +83,9 @@ public class ItemDisplayActivity extends AppCompatActivity implements View.OnCli
         cart = (Button) findViewById(R.id.bt_add_to_cart);
         iv_fav = (ImageView) findViewById(R.id.imgFav);
 
-
         iv_productImage = (ImageView) findViewById(R.id.product_image);
         tv_productName = (TextView) findViewById(R.id.item_name);
         tv_productPrice = (TextView) findViewById(R.id.item_price);
-
 
         if (!(productImage.isEmpty())) {
             Picasso.with(getApplicationContext()).load(productImage).into(iv_productImage);
@@ -131,7 +137,6 @@ public class ItemDisplayActivity extends AppCompatActivity implements View.OnCli
             case R.id.bt_add_to_cart:
 
                 if (!already) {
-                    already = true;
 
                     addCartItem();
 
@@ -176,9 +181,7 @@ public class ItemDisplayActivity extends AppCompatActivity implements View.OnCli
             @Override
             public void onResponse(JSONObject response) {
                 if (option.equals("1")) {
-                    Toast.makeText(ItemDisplayActivity.this, "Added to Favourites", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(ItemDisplayActivity.this, "Removed from Favourites", Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -199,27 +202,24 @@ public class ItemDisplayActivity extends AppCompatActivity implements View.OnCli
                 addConverterFactory(GsonConverterFactory.create());
 
         Retrofit retrofit = builder.build();
-        DataInterface client = retrofit.create(DataInterface.class);
+        final DataInterface client = retrofit.create(DataInterface.class);
 
         Call<CartItemPost> call = client.putCartItemOnServer(item);
         call.enqueue(new Callback<CartItemPost>() {
             @Override
             public void onResponse(Call<CartItemPost> call, Response<CartItemPost> response) {
+                already = true;
 
-
-                Toast.makeText(ItemDisplayActivity.this, "Added item " + productName + "to your cart!", Toast.LENGTH_SHORT).show();
-
-
+                cart.setText("Added to cart");
+                cart.setTextColor(Color.parseColor("#fafafa"));
+                cart.setBackgroundColor(Color.parseColor("#b6413f"));
             }
-
             @Override
             public void onFailure(Call<CartItemPost> call, Throwable t) {
 
             }
+
+
         });
-
-
     }
-
-
 }

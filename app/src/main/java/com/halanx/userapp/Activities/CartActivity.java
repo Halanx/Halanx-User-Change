@@ -159,7 +159,7 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
                     Log.d("TAG", "If");
                     progressBar.setVisibility(View.INVISIBLE);
                     recyclerView = (RecyclerView) findViewById(R.id.cart_recycler_view);
-                    adapterTemp = new CartsAdapter(activeItems, getApplicationContext(),tvTotal);
+                    adapterTemp = new CartsAdapter(activeItems, getApplicationContext());
                     RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
                     recyclerView.setAdapter(adapterTemp);
                     recyclerView.setLayoutManager(layoutManager);
@@ -318,7 +318,7 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
 
                             String total = cart.getTotal().toString();
                             String del = cart.getDeliveryCharges().toString();
-
+                            tvSubtotal.setText(total);
                             tvTotal.setText(total);
                             tvDelivery.setText(del);
 

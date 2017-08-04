@@ -98,6 +98,7 @@
 
             <Button
                 android:id="@+id/bt_add_cart"
+                android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Add to cart"

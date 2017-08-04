@@ -81,6 +81,7 @@ public class OngoingOrderFrag extends Fragment {
                 allOrdersList = response.body();
                 progressBar.setVisibility(View.GONE);
 
+                Log.i("OrderBro","retrofit "+response.body().size());
 
                 allOrdersList = response.body();
                 progressBar.setVisibility(View.GONE);
@@ -88,7 +89,7 @@ public class OngoingOrderFrag extends Fragment {
                 if (!allOrdersList.isEmpty()) {
                     onGoingOrderList = new ArrayList<>();
 
-                    for (int i = (allOrdersList.size()-1); i > 0 ; i--) {
+                    for (int i = 0; i <allOrdersList.size() ; i++) {
                         if (!allOrdersList.get(i).getIsDelivered()) {
                             //Completed order = isDelivered is true
                             onGoingOrderList.add(allOrdersList.get(i));
@@ -104,6 +105,7 @@ public class OngoingOrderFrag extends Fragment {
                         recyclerView.setHasFixedSize(true);
 
                     } else {
+                        Log.i("OrderBro","Else 1 ");
                         llNoOrders.setVisibility(View.VISIBLE);
                     }
 
@@ -111,6 +113,7 @@ public class OngoingOrderFrag extends Fragment {
                 }
 
                 else {
+                    Log.i("OrderBro","Else 2 ");
                     llNoOrders.setVisibility(View.VISIBLE);
                 }
             }
@@ -121,21 +124,21 @@ public class OngoingOrderFrag extends Fragment {
             }
         });
 
-        Volley.newRequestQueue(getActivity()).add(new StringRequest(Request.Method.GET, "http://ec2-34-208-181-152.us-west-2.compute.amazonaws.com/orders/user/9582184794",
-                new com.android.volley.Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-
-                        Log.i("OrderBro",response);
-
-
-                    }
-                }, new com.android.volley.Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-
-            }
-        }));
+//        Volley.newRequestQueue(getActivity()).add(new StringRequest(Request.Method.GET, "http://ec2-34-208-181-152.us-west-2.compute.amazonaws.com/orders/user/9582184794",
+//                new com.android.volley.Response.Listener<String>() {
+//                    @Override
+//                    public void onResponse(String response) {
+//
+//                        Log.i("OrderBro",response);
+//
+//
+//                    }
+//                }, new com.android.volley.Response.ErrorListener() {
+//            @Override
+//            public void onErrorResponse(VolleyError error) {
+//
+//            }
+//        }));
 
 
         return v;

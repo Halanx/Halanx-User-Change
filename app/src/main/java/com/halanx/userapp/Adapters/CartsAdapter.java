@@ -35,21 +35,18 @@ public class CartsAdapter extends RecyclerView.Adapter<CartsAdapter.TempViewHold
 
     List<CartItem> listItems = new ArrayList<>();
     Context c;
-    TextView totalitems;
+    TextView totalitems, subtotal, delivery;
 
 
-
-
-    public CartsAdapter(List<CartItem> listItems, Context cont, TextView tvTotal) {
+    public CartsAdapter(List<CartItem> listItems, Context cont) {
         this.listItems = listItems;
-        totalitems = tvTotal;
         this.c = cont;
     }
 
     @Override
     public TempViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_cart_recycler, parent, false);
-        return new TempViewHolder(view, c,listItems);
+        return new TempViewHolder(view, c, listItems);
     }
 
     @Override
@@ -57,13 +54,15 @@ public class CartsAdapter extends RecyclerView.Adapter<CartsAdapter.TempViewHold
 
 
         double quantity = listItems.get(position).getQuantity();
-        int quantityInt = ((int) quantity)-1;
+        int quantityInt = ((int) quantity) - 1;
         holder.spinnerQuantity.setSelection(quantityInt);
 
         Picasso.with(c).load(listItems.get(position).getItem().getProductImage()).into(holder.cartImage);
         holder.cartName.setText(listItems.get(position).getItem().getProductName());
-        holder.cartPrice.setText(listItems.get(position).getItem().getPrice().toString());
-         holder.cartNotes.setText(listItems.get(position).getNotes());
+
+        String price = "Rs. " + listItems.get(position).getItem().getPrice().toString();
+        holder.cartPrice.setText(price);
+        holder.cartNotes.setText(listItems.get(position).getNotes());
 
 
     }
@@ -74,7 +73,7 @@ public class CartsAdapter extends RecyclerView.Adapter<CartsAdapter.TempViewHold
         return listItems.size();
     }
 
-    public class TempViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class TempViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         ImageView cartImage;
         TextView cartPrice, cartName;
@@ -99,8 +98,8 @@ public class CartsAdapter extends RecyclerView.Adapter<CartsAdapter.TempViewHold
             btNotesProceed = (ImageButton) itemView.findViewById(R.id.bt_product_notes_proceed);
 
 
-            c=cont;
-            holderCartItemList=cartItems;
+            c = cont;
+            holderCartItemList = cartItems;
 
 
             btnDelete.setOnClickListener(this);
@@ -111,12 +110,12 @@ public class CartsAdapter extends RecyclerView.Adapter<CartsAdapter.TempViewHold
         @Override
         public void onClick(View view) {
             final int pos = getAdapterPosition();
-            String url = "http://ec2-34-208-181-152.us-west-2.compute.amazonaws.com/carts/items/"+holderCartItemList.get(pos).getId();
-            switch (view.getId()){
-                case R.id.bt_product_delete :
+            String url = "http://ec2-34-208-181-152.us-west-2.compute.amazonaws.com/carts/items/" + holderCartItemList.get(pos).getId();
+            switch (view.getId()) {
+                case R.id.bt_product_delete:
                     JSONObject obj = new JSONObject();
                     try {
-                        obj.put("RemovedFromCart",true);
+                        obj.put("RemovedFromCart", true);
                         holderCartItemList.remove(pos);
                         notifyDataSetChanged();
                     } catch (JSONException e) {
@@ -137,12 +136,12 @@ public class CartsAdapter extends RecyclerView.Adapter<CartsAdapter.TempViewHold
 
                     break;
 
-                case R.id.bt_product_notes_proceed :
+                case R.id.bt_product_notes_proceed:
 
                     notes = cartNotes.getText().toString();
                     JSONObject objNotes = new JSONObject();
                     try {
-                        objNotes.put("Notes",notes);
+                        objNotes.put("Notes", notes);
 
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -165,13 +164,6 @@ public class CartsAdapter extends RecyclerView.Adapter<CartsAdapter.TempViewHold
                     break;
 
             }
-
-
-
-
-
-
-
 
 
         }

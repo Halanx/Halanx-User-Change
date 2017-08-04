@@ -174,8 +174,7 @@ public class SigninActivity extends AppCompatActivity {
 
                         //IF ERROR IS FALSE, LOGIN SUCCESS
                         if (!response.body().getError()) {
-                            progressBar.setVisibility(View.INVISIBLE);
-//                            Toast.makeText(SigninActivity.this, "Login " + !response.body().getError(), Toast.LENGTH_SHORT).show();
+                              Toast.makeText(SigninActivity.this, "Login " + !response.body().getError(), Toast.LENGTH_SHORT).show();
                             Volley.newRequestQueue(SigninActivity.this).add(new StringRequest(Request.Method.GET, "http://ec2-34-208-181-152.us-west-2.compute.amazonaws.com/users/" + mobile, new com.android.volley.Response.Listener<String>() {
                                 @Override
                                 public void onResponse(String response) {
@@ -193,6 +192,8 @@ public class SigninActivity extends AppCompatActivity {
                                     Log.i("TAG", response);
                                     Log.i("TAG", "Info" + getSharedPreferences("Login", Context.MODE_PRIVATE).getString("UserInfo", null));
                                     startActivity(new Intent(SigninActivity.this, MapsActivity.class));
+                                    progressBar.setVisibility(View.INVISIBLE);
+//
                                     finish();
 
 
@@ -201,12 +202,15 @@ public class SigninActivity extends AppCompatActivity {
                                 @Override
                                 public void onErrorResponse(VolleyError error) {
 
+                                    Toast.makeText(getApplicationContext(), "network", Toast.LENGTH_SHORT).show();
+                                    return;
+
                                 }
                             }));
 
 
                         } else {
-                            Toast.makeText(SigninActivity.this, "Please enter correct credentials " + !response.body().getError(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "New User! Signup First", Toast.LENGTH_SHORT).show();
                             progressBar.setVisibility(View.GONE);
                             btnLogin.setVisibility(View.VISIBLE);
                         }

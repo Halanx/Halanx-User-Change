@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/samarthgupta/.android/build-cache/bca681aec40be701bb5b44af88d0cf97e1f94d4b/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3f9cb14177c394545a825f1f04b4f287f6c771e0">
+        <dex dex="/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_f6af8b149ce1ca623e6b1c268424b6cce8f3f31f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/samarthgupta/.android/build-cache/db64e2b9616e2e45cbc93675d4df48b4eb2a080c/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bc5cb7b8461ba72332bbc062210bf2bd52aa39ce">
+        <dex dex="/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_db9ee2bbc8af29bf1ae955b47a1fbe7080eef01a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/samarthgupta/.android/build-cache/f9896beeba78f28a5ff04c0c16874481918b841b/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="736dfac7308dfec5d2ceb07a7980df62eee8baae">
+        <dex dex="/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_75392283114a7e8124f1bc6e065d1de999737a24/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/samarthgupta/.android/build-cache/6eb74f0de730940a40e7cd1a59c2f21a56b1e733/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0adb9447509bdd9a674c1c3e7e5ee996247df478">
+        <dex dex="/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_60e2eaeaab1b41953878652a2304aa51674c8cf4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/bundles/default/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="82c78c27b8d6cfcea6cdfdf3ab2a3f00ed95c79b">
+        <dex dex="/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/app/build/intermediates/transforms/dex/debug/folders/1000/4/classes_f535bbecba20cb8cd8c29adc5f53abc7d616ccc1/classes.dex" />
+    </item>
+
+</items>

@@ -2,6 +2,7 @@ package com.halanx.userapp.Activities;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -210,7 +211,9 @@ public class FavouritesActivity extends AppCompatActivity {
 
 
                                 Toast.makeText(FavouritesActivity.this, "Added item " + favPros.get(pos).getProductName() + "to your cart!", Toast.LENGTH_SHORT).show();
-
+                                btAddCart.setText("Added to cart");
+                                btAddCart.setTextColor(Color.parseColor("#fafafa"));
+                                btAddCart.setBackgroundColor(Color.parseColor("#b6413f"));
 
                             }
 

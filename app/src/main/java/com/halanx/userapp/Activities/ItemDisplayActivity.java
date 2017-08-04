@@ -51,9 +51,9 @@ public class ItemDisplayActivity extends AppCompatActivity implements View.OnCli
 
     String productName, productFeatures, productImage;
     Double productPrice;
-    List<CartItemPost> items;
     String mobileNumber;
     List<CartItem> Citems;
+
 
 
 
@@ -94,7 +94,8 @@ public class ItemDisplayActivity extends AppCompatActivity implements View.OnCli
         }
 
         tv_productName.setText(productName);
-        tv_productPrice.setText(Double.toString(productPrice));
+        String price = "Rs. " + Double.toString(productPrice);
+        tv_productPrice.setText(price);
         isFav = false;
 
 
@@ -170,7 +171,7 @@ public class ItemDisplayActivity extends AppCompatActivity implements View.OnCli
         //option is 0 or 1 -
         //1 for adding , 0 for removing
 
-        String url = "http://ec2-34-208-181-152.us-west-2.compute.amazonaws.com/users/favs/"+mobileNumber+"/" + option + "/";
+        String url = "http://ec2-34-208-181-152.us-west-2.compute.amazonaws.com/users/favs/" + mobileNumber + "/" + option + "/";
         JSONObject obj = new JSONObject();
         try {
             obj.put("LastItem", productID);
@@ -217,6 +218,7 @@ public class ItemDisplayActivity extends AppCompatActivity implements View.OnCli
             @Override
             public void onFailure(Call<CartItemPost> call, Throwable t) {
 
+                Toast.makeText(ItemDisplayActivity.this, "Network error", Toast.LENGTH_SHORT).show();
             }
 
 

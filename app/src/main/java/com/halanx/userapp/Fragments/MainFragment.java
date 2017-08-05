@@ -122,8 +122,9 @@ public class MainFragment extends Fragment implements AdapterView.OnItemSelected
                 if(storesList.size()!=0) {
                     for (int i = 0; i < storesList.size(); i++) {
 
-                        if (storesList.get(i) != null&&!storesList.get(i).getStoreName().isEmpty()) {
-                            storeNames.add(storesList.get(i).getStoreName());
+                        if (storesList.get(i) != null) {
+                            if(storesList.get(i).getStoreName()!=null&&!storesList.get(i).getStoreName().isEmpty()){
+                            storeNames.add(storesList.get(i).getStoreName());}
                         }
                     }
 

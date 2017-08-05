@@ -1,6 +1,6 @@
  <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:background="#FFFFFF"
+    android:layout_height="match_parent" android:background="#fcfcfc"
     tools:context="com.payu.payuui.Fragment.CreditDebitFragment">
 
 
@@ -29,7 +29,7 @@
 
         <TextView android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:textColor="#9C9C9C"
+                android:textColor="#686868"
                 android:textStyle="bold"
                 android:text="@string/enter_card_details"></TextView>
 
@@ -108,6 +108,7 @@
                     android:id="@+id/image_card_type"
                     android:layout_width="0dp"
                     android:layout_height="25dp"
+                    android:layout_gravity="center_vertical"
                     android:layout_weight="1"
                     android:src="@drawable/icon_card"/>
                     <!--android:scaleType="fitCenter"/>-->

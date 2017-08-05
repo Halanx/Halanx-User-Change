@@ -59,6 +59,7 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
     OrderInfo order;
     ProgressDialog pd;
 
+    String total;
     private String merchantKey, userCredentials;
 
     // These will hold all the payment parameters
@@ -76,6 +77,7 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
 
         Payu.setInstance(this);
 
+        total = getIntent().getStringExtra("total_cost");
 
         builder = new Retrofit.Builder().baseUrl(djangoBaseUrl).
                 addConverterFactory(GsonConverterFactory.create());
@@ -184,7 +186,7 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
         merchantKey =  "gtKFFx";
         int environment = PayuConstants.STAGING_ENV;
         String email = "samarth-gupta@halanx.com";
-        String amount = "10";
+        String amount = total;
 
 //        merchantKey = ((EditText) findViewById(R.id.editTextMerchantKey)).getText().toString();
 //        String amount = ((EditText) findViewById(R.id.editTextAmount)).getText().toString();

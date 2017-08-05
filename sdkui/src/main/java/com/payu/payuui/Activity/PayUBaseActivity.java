@@ -218,18 +218,6 @@ public class PayUBaseActivity extends FragmentActivity implements PaymentRelated
                 paymentOptionsList.add(SdkUIConstants.CREDIT_DEBIT_CARDS);
             }
 
-            if (payuResponse.isNetBanksAvailable()) { // okay we have net banks now.
-                paymentOptionsList.add(SdkUIConstants.NET_BANKING);
-            }
-
-            if(payuResponse.isUpiAvailable()){ // adding UPI
-                paymentOptionsList.add(SdkUIConstants.UPI);
-            }
-
-            if (payuResponse.isPaisaWalletAvailable() && payuResponse.getPaisaWallet().get(0).getBankCode().contains(PayuConstants.PAYUW)) {
-                paymentOptionsList.add(SdkUIConstants.PAYU_MONEY);
-            }
-
         } else {
             Toast.makeText(this, "Something went wrong : " + payuResponse.getResponseStatus().getResult(), Toast.LENGTH_LONG).show();
         }
@@ -240,12 +228,12 @@ public class PayUBaseActivity extends FragmentActivity implements PaymentRelated
         viewPager.setAdapter(pagerAdapter);
 
         slidingTabLayout = (SlidingTabLayout) findViewById(R.id.sliding_tab_layout);
-        slidingTabLayout.setDistributeEvenly(false);
+        slidingTabLayout.setDistributeEvenly(true);
 
         slidingTabLayout.setCustomTabColorizer(new SlidingTabLayout.TabColorizer() {
             @Override
             public int getIndicatorColor(int position) {
-                return getResources().getColor(R.color.tabsScrollColor);
+                return getResources().getColor(R.color.cb_errorRed);
             }
         });
 
@@ -293,18 +281,6 @@ public class PayUBaseActivity extends FragmentActivity implements PaymentRelated
                         if(tempCreditDebitFragment != null)
                             tempCreditDebitFragment.checkData();
                         break;
-                    case SdkUIConstants.NET_BANKING:
-                        payNowButton.setEnabled(true);
-                        hideKeyboard();
-                        break;
-                    case SdkUIConstants.PAYU_MONEY:
-                        payNowButton.setEnabled(true);
-                        hideKeyboard();
-                        break;
-                    case SdkUIConstants.UPI:
-                        payNowButton.setEnabled(true);
-                        hideKeyboard();
-                        break;
                 }
 
             }
@@ -336,19 +312,6 @@ public class PayUBaseActivity extends FragmentActivity implements PaymentRelated
                         break;
                     case SdkUIConstants.CREDIT_DEBIT_CARDS:
                         makePaymentByCreditCard();
-                        break;
-                    case SdkUIConstants.NET_BANKING:
-                        makePaymentByNB();
-                        break;
-                    case SdkUIConstants.CASH_CARDS:
-                        break;
-                    case SdkUIConstants.EMI:
-                        break;
-                    case SdkUIConstants.PAYU_MONEY:
-                        makePaymentByPayUMoney();
-                        break;
-                    case SdkUIConstants.UPI:
-                        makePaymentByUPI();
                         break;
                 }
             }

@@ -67,6 +67,7 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
     boolean delivery = false;
 
     String date, timings;
+    String total;
 
     String mobileNumber;
     String addressDetails;
@@ -300,6 +301,7 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
                 }
 
                 intentCheckout.putExtra("deliveryScheduled", delivery_scheduled);
+                intentCheckout.putExtra("total_cost",total);
                 startActivity(intentCheckout);
                 finish();
                 break;
@@ -316,7 +318,7 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
                         public void onResponse(Call<CartsInfo> call, Response<CartsInfo> response) {
                             CartsInfo cart = response.body();
 
-                            String total = cart.getTotal().toString();
+                            total = cart.getTotal().toString();
                             String del = cart.getDeliveryCharges().toString();
                             tvSubtotal.setText(total);
                             tvTotal.setText(total);

@@ -59,7 +59,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:text="PayU Money"
+        android:text=" PayU "
+            android:layout_gravity="center_vertical"
         android:textAppearance="?android:textAppearanceLarge" />
 
         </LinearLayout>
@@ -87,6 +88,10 @@
         <!--</LinearLayout>-->
 
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black" />
 
     </LinearLayout>
 

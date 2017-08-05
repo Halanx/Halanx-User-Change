@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/bundles/default/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="82c78c27b8d6cfcea6cdfdf3ab2a3f00ed95c79b">
+        <dex dex="/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/app/build/intermediates/transforms/dex/debug/folders/1000/4/classes_f535bbecba20cb8cd8c29adc5f53abc7d616ccc1/classes.dex" />
+    </item>
+
+</items>

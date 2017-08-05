@@ -63,6 +63,7 @@ public class SigninActivity extends AppCompatActivity {
     String mobile;
     String password;
     AccessToken accessToken;
+    AlertDialog dial1 , dial2;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -88,14 +89,15 @@ public class SigninActivity extends AppCompatActivity {
                     finish();
                 }
             });
-            builder.create().show();
+            dial1 = builder.create();
+            dial1.show();
         }
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED) {
             if (ActivityCompat.shouldShowRequestPermissionRationale(this,
                     Manifest.permission.ACCESS_FINE_LOCATION)) {
-                new AlertDialog.Builder(this)
+                 dial2 = new AlertDialog.Builder(this)
                         .setTitle("Location Permission Needed")
                         .setMessage("This app needs the Location permission, please accept to use location functionality")
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -105,7 +107,8 @@ public class SigninActivity extends AppCompatActivity {
                                         new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
                                         MY_PERMISSIONS_REQUEST_LOCATION);
                             }
-                        }).create().show();
+                        }).create();
+                dial2.show();
 
             } else {
                 ActivityCompat.requestPermissions(this,
@@ -119,10 +122,13 @@ public class SigninActivity extends AppCompatActivity {
         Boolean loginStatus = sharedPreferences.getBoolean("Loginned", false);
 
         if (loginStatus) {
+            if(dial1!=null){
+            dial1.dismiss();}
+            if(dial2!=null){
+            dial2.dismiss();}
+
             if (sharedPreferences.getBoolean("first_login", false)) {
-
                 startActivity(new Intent(SigninActivity.this, HomeActivity.class));
-
                 finish();
             } else {
                 startActivity(new Intent(SigninActivity.this, MapsActivity.class));

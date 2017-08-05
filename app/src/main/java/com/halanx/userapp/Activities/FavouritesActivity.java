@@ -197,7 +197,8 @@ public class FavouritesActivity extends AppCompatActivity {
 
 
                     case R.id.bt_add_cart: {
-                        CartItemPost item = new CartItemPost(Long.parseLong(mobileNumber), Double.parseDouble("1"), favPros.get(pos).getId(), null);
+
+                        CartItemPost item = new CartItemPost(Long.parseLong(mobileNumber),favQuantity.getSelectedItemPosition()+1.0, favPros.get(pos).getId(), null);
                         Retrofit.Builder builder = new Retrofit.Builder().baseUrl(djangoBaseUrl).
                                 addConverterFactory(GsonConverterFactory.create());
 

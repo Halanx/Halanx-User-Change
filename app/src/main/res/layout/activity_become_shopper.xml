@@ -82,8 +82,9 @@
           android:layout_height="wrap_content"
           android:padding="10dp"
           android:text="Download Now"
+          android:background="#b6413f"
+          android:textColor="#fafafa"
           android:textStyle="bold"
-          android:background="#e4e4e4"
           android:gravity="center"
           android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"/>
 

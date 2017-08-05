@@ -212,8 +212,6 @@ public class ItemDisplayActivity extends AppCompatActivity implements View.OnCli
                 already = true;
 
                 cart.setText("Added to cart");
-                cart.setTextColor(Color.parseColor("#fafafa"));
-                cart.setBackgroundColor(Color.parseColor("#b6413f"));
             }
             @Override
             public void onFailure(Call<CartItemPost> call, Throwable t) {

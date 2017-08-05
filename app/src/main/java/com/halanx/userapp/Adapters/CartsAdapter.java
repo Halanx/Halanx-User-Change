@@ -2,9 +2,11 @@ package com.halanx.userapp.Adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -97,13 +99,48 @@ public class CartsAdapter extends RecyclerView.Adapter<CartsAdapter.TempViewHold
             cartNotes = (EditText) itemView.findViewById(R.id.et_product_notes);
             btNotesProceed = (ImageButton) itemView.findViewById(R.id.bt_product_notes_proceed);
 
-
             c = cont;
             holderCartItemList = cartItems;
 
 
             btnDelete.setOnClickListener(this);
             btNotesProceed.setOnClickListener(this);
+
+            spinnerQuantity.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                    int pos = getAdapterPosition();
+                    String url = "http://ec2-34-208-181-152.us-west-2.compute.amazonaws.com/carts/items/" + holderCartItemList.get(pos).getId();
+                    JSONObject obj = new JSONObject();
+
+                    try {
+                        obj.put("Quantity", i + 1);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+//                    Toast.makeText(c,holderCartItemList.get(pos).getId()+ " Item "+i, Toast.LENGTH_SHORT).show();
+
+                    Volley.newRequestQueue(c).add(new JsonObjectRequest(Request.Method.PATCH, url, obj, new com.android.volley.Response.Listener<JSONObject>() {
+                        @Override
+                        public void onResponse(JSONObject response) {
+                            int pos = getAdapterPosition();
+                            Log.i("Cart", "Quantity changed of item " + holderCartItemList.get(pos).getId());
+
+                        }
+                    }, new com.android.volley.Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+
+                        }
+                    }));
+
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> adapterView) {
+
+                }
+            });
 
         }
 

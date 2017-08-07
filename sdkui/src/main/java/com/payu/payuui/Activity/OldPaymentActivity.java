@@ -83,7 +83,7 @@ public class OldPaymentActivity  extends AppCompatActivity implements MagicRetry
 
         String merchantKey = null;
         for (String item : list) {
-            String[] items = item.split("=");
+            String[]    items = item.split("=");
             if(items.length >= 2) {
                 String id = items[0];
                 switch (id) {

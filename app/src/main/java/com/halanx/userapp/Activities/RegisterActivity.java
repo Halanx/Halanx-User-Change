@@ -273,7 +273,7 @@ RegisterActivity extends AppCompatActivity {
 
     public void registration() {
 
-        Call<Resp> call = clientRegister.register(firstName, lastName, email, password, mobileNumber, regId);
+        Call<Resp> call = clientRegister.register(firstName, lastName, email, password, mobileNumber);
         call.enqueue(new Callback<Resp>() {
             @Override
             public void onResponse(Call<Resp> call, Response<Resp> response) {

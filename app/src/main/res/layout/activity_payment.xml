@@ -17,7 +17,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clickable="true"
-            android:onClick="onPaymentOptionClick"
             android:padding="15dp">
 
             <ImageView
@@ -40,52 +39,27 @@
             android:layout_height="1dp"
             android:background="@color/black" />
 
-
-
         <LinearLayout
-        android:id="@+id/ll_PayU"
-        android:clickable="true"
-        android:onClick="onPaymentOptionClick"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp">
+            android:id="@+id/ll_PayU"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:padding="15dp">
 
-        <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@drawable/bank_card_backside_501" />
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/bank_card_backside_501"  />
 
-        <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:text=" PayU "
-            android:layout_gravity="center_vertical"
-        android:textAppearance="?android:textAppearanceLarge" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
+                android:text="Credit Card/Debit Card"
+                android:textAppearance="?android:textAppearanceLarge" />
 
         </LinearLayout>
-
-        <!--<LinearLayout-->
-        <!--android:id="@+id/ll_PayTM"-->
-        <!--android:clickable="true"-->
-        <!--android:onClick="onPaymentOptionClick"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:padding="10dp">-->
-
-        <!--<ImageView-->
-        <!--android:layout_width="50dp"-->
-        <!--android:layout_height="50dp"-->
-        <!--android:src="@drawable/ic_cast_light" />-->
-
-        <!--<TextView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginLeft="10dp"-->
-        <!--android:text="PayTM Wallet"-->
-        <!--android:textAppearance="?android:textAppearanceLarge" />-->
-
-        <!--</LinearLayout>-->
 
 
         <View

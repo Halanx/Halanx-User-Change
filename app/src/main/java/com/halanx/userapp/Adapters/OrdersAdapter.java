@@ -120,6 +120,10 @@ public class OrdersAdapter extends RecyclerView.Adapter<OrdersAdapter.CompletedO
             ivNav.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+
+                    int pos = getAdapterPosition();
+//                    info.get(pos).getOrderItems()
+
                     Toast.makeText(c, "Navigate", Toast.LENGTH_SHORT).show();
                     Log.i("CLICK", "CLICK");
 

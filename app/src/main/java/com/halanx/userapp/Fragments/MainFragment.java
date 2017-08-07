@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -123,7 +124,8 @@ public class MainFragment extends Fragment implements AdapterView.OnItemSelected
                     for (int i = 0; i < storesList.size(); i++) {
 
                         if (storesList.get(i) != null) {
-                            storeNames.add(storesList.get(i).getStoreName());
+                            if(storesList.get(i).getStoreName()!=null&&!storesList.get(i).getStoreName().isEmpty()){
+                            storeNames.add(storesList.get(i).getStoreName());}
                         }
                     }
 
@@ -185,6 +187,8 @@ public class MainFragment extends Fragment implements AdapterView.OnItemSelected
                 if (response.body() != null) {
                     List<ProductInfo> products = response.body();
                     adapter = new ProductAdapter(products, getActivity());
+
+                    //Comment to be removed
                     GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 3);
                     recyclerView.setAdapter(adapter);
                     recyclerView.setLayoutManager(gridLayoutManager);

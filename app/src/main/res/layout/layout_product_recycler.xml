@@ -160,7 +160,7 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginBottom="5dp"
                 android:id="@+id/cv_rest_add_cart"
-                android:background="#b6413f"
+                android:background="#d45e5c"
                 android:layout_marginEnd="5dp">
 
                 <TextView

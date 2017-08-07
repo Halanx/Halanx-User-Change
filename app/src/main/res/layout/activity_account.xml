@@ -200,7 +200,7 @@
                     android:layout_marginBottom="10dp"
                     android:layout_marginLeft="6dp"
                     android:hint="Address"
-                    android:textColor="#fafafa"
+                    android:textColor="#6e6e6e"
                     android:textSize="20dp" />
 
                 <Button

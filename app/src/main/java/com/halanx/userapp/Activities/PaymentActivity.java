@@ -511,9 +511,62 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
                                 dialog.dismiss();
                             }
                         }).show();
+                SharedPreferences sharedPreferences = getSharedPreferences("Login", Context.MODE_PRIVATE);
+                long userMobile = Long.parseLong(sharedPreferences.getString("MobileNumber", null));
+
+                SharedPreferences sharedPref = getSharedPreferences("location", Context.MODE_PRIVATE);
+                float latitude = sharedPref.getFloat("latitudeDelivery", 0);// LATITUDE
+                float longitude = sharedPref.getFloat("longitudeDelivery", 0);// LONGITUDE
+                Log.d("latitudea", "" + latitude);
+                Log.d("longitude", "" + longitude);
+
+                if ((getIntent().getBooleanExtra("deliveryScheduled", false))) {
+
+                    order = new OrderInfo(userMobile, addressDetails, date, starttime, endtime, false, null, latitude, longitude);
+                    Log.d("done", "done");
+                } else if (!(getIntent().getBooleanExtra("deliveryScheduled", true))) {
+                    String date = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+
+                    order = new OrderInfo(userMobile, addressDetails, date, null, null, true, null, latitude, longitude);
+                }
+
+
+                Log.i("ORDER", order.getDeliveryAddress() + order.getLatitude() + order.getLongitude());
+
+
+                pd = new ProgressDialog(PaymentActivity.this);
+                pd.setTitle("Please wait");
+                pd.setMessage("Posting your order");
+                pd.setCancelable(false);
+                pd.show();
+
+                Call<OrderInfo> callOrder = client.postUserOrder(order);
+                callOrder.enqueue(new Callback<OrderInfo>() {
+                    @Override
+                    public void onResponse(Call<OrderInfo> call, Response<OrderInfo> response) {
+//                        Toast.makeText(PaymentActivity.this, "Order Placed", Toast.LENGTH_SHORT).show();
+
+                        pd.setTitle("Order placed!");
+                        pd.setMessage("You can review your order in orders.");
+                        pd.dismiss();
+
+                        startActivity(new Intent(PaymentActivity.this, HomeActivity.class));
+                        finish();
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<OrderInfo> call, Throwable t) {
+
+                        Toast.makeText(PaymentActivity.this, "Network error", Toast.LENGTH_SHORT).show();
+                        pd.dismiss();
+
+                    }
+                });
+
 
             } else {
-                Toast.makeText(this, getString(R.string.could_not_receive_data), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Payment cancelled", Toast.LENGTH_LONG).show();
             }
         }
     }

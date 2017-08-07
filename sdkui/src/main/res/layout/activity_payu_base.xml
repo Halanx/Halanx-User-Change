@@ -75,7 +75,7 @@
             android:text="PAY NOW"
             android:id="@+id/button_pay_now"
             android:enabled="false"
-            android:background="#dadada"/>
+            android:background="#b9b9b9"/>
 
     </RelativeLayout>
 

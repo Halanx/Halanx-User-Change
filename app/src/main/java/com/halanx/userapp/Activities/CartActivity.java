@@ -252,6 +252,13 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
                 line1 = (EditText) dialog.findViewById(R.id.et1_dialogue);
                 line2 = (EditText) dialog.findViewById(R.id.et2_dialogue);
                 line3 = (EditText) dialog.findViewById(R.id.et3_dialogue);
+                String add = getSharedPreferences("location",Context.MODE_PRIVATE).getString("addressDelivery",null);
+               if(add!=null) {
+                   String[] Detail_add = add.split(",");
+                   line2.setText(Detail_add[1]);
+                   line3.setText(Detail_add[2]);
+               }
+
                 Button proceed = (Button) dialog.findViewById(R.id.btProceed_dialogue);
                 Button cancel = (Button) dialog.findViewById(R.id.btCancel_dialogue);
 

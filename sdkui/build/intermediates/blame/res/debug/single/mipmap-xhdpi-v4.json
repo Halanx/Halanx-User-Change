@@ -1,0 +1,46 @@
+[
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/debug/mipmap-xhdpi-v4/app_bar_next.png",
+        "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/src/main/res/mipmap-xhdpi/app_bar_next.png"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/debug/mipmap-xhdpi-v4/vpi__tab_selected_holo.9.png",
+        "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/src/main/res/mipmap-xhdpi/vpi__tab_selected_holo.9.png"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/debug/mipmap-xhdpi-v4/image_cvv.png",
+        "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/src/main/res/mipmap-xhdpi/image_cvv.png"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/debug/mipmap-xhdpi-v4/vpi__tab_unselected_pressed_holo.9.png",
+        "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/src/main/res/mipmap-xhdpi/vpi__tab_unselected_pressed_holo.9.png"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/debug/mipmap-xhdpi-v4/visa.png",
+        "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/src/main/res/mipmap-xhdpi/visa.png"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/debug/mipmap-xhdpi-v4/vpi__tab_unselected_focused_holo.9.png",
+        "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/src/main/res/mipmap-xhdpi/vpi__tab_unselected_focused_holo.9.png"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/debug/mipmap-xhdpi-v4/card_icon.png",
+        "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/src/main/res/mipmap-xhdpi/card_icon.png"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/debug/mipmap-xhdpi-v4/citi_launcher.png",
+        "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/src/main/res/mipmap-xhdpi/citi_launcher.png"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/debug/mipmap-xhdpi-v4/vpi__tab_selected_focused_holo.9.png",
+        "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/src/main/res/mipmap-xhdpi/vpi__tab_selected_focused_holo.9.png"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/debug/mipmap-xhdpi-v4/vpi__tab_selected_pressed_holo.9.png",
+        "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/src/main/res/mipmap-xhdpi/vpi__tab_selected_pressed_holo.9.png"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/debug/mipmap-xhdpi-v4/vpi__tab_unselected_holo.9.png",
+        "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/src/main/res/mipmap-xhdpi/vpi__tab_unselected_holo.9.png"
+    }
+]

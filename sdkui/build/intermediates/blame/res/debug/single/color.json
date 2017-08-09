@@ -1,0 +1,90 @@
+[
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/debug/color/abc_tint_default.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/color/abc_tint_default.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/debug/color/abc_secondary_text_material_light.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/color/abc_secondary_text_material_light.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/debug/color/vpi__dark_theme.xml",
+        "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/src/main/res/color/vpi__dark_theme.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/debug/color/switch_thumb_material_dark.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/color/switch_thumb_material_dark.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/debug/color/abc_tint_edittext.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/color/abc_tint_edittext.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/debug/color/switch_thumb_material_light.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/color/switch_thumb_material_light.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/debug/color/abc_secondary_text_material_dark.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/color/abc_secondary_text_material_dark.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/debug/color/abc_tint_btn_checkable.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/color/abc_tint_btn_checkable.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/debug/color/abc_tint_switch_thumb.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/color/abc_tint_switch_thumb.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/debug/color/abc_tint_seek_thumb.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/color/abc_tint_seek_thumb.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/debug/color/vpi__light_theme.xml",
+        "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/src/main/res/color/vpi__light_theme.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_light.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/color/abc_primary_text_disable_only_material_light.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/debug/color/otp_approve_button_color.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/db64e2b9616e2e45cbc93675d4df48b4eb2a080c/output/res/color/otp_approve_button_color.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/debug/color/abc_tint_spinner.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/color/abc_tint_spinner.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/debug/color/abc_btn_colored_borderless_text_material.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/color/abc_btn_colored_borderless_text_material.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/debug/color/abc_tint_switch_track.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/color/abc_tint_switch_track.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_dark.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/color/abc_primary_text_disable_only_material_dark.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/debug/color/abc_search_url_text.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/color/abc_search_url_text.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/debug/color/button_paynow_color.xml",
+        "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/src/main/res/color/button_paynow_color.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/debug/color/abc_primary_text_material_light.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/color/abc_primary_text_material_light.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/debug/color/abc_primary_text_material_dark.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/color/abc_primary_text_material_dark.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/debug/color/color.xml",
+        "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/src/main/res/color/color.xml"
+    }
+]

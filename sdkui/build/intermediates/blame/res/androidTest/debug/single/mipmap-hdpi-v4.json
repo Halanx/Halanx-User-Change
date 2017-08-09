@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/androidTest/debug/mipmap-hdpi-v4/card_icon.png",
+        "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/bundles/debug/res/mipmap-hdpi-v4/card_icon.png"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/androidTest/debug/mipmap-hdpi-v4/image_cvv.png",
+        "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/bundles/debug/res/mipmap-hdpi-v4/image_cvv.png"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/androidTest/debug/mipmap-hdpi-v4/visa.png",
+        "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/bundles/debug/res/mipmap-hdpi-v4/visa.png"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/androidTest/debug/mipmap-hdpi-v4/ic_launcher.png",
+        "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/bundles/debug/res/mipmap-hdpi-v4/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/androidTest/debug/mipmap-hdpi-v4/citi_launcher.png",
+        "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/bundles/debug/res/mipmap-hdpi-v4/citi_launcher.png"
+    }
+]

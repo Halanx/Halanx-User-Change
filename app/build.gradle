@@ -39,6 +39,7 @@ dependencies {
     //    compile 'com.payu.magicretry:magicretry:1.0.4'
 
     //    compile 'com.payu.custombrowser:payu-custom-browser:6.1.1'
+    compile project(':sdkui')
     compile 'devs.mulham.horizontalcalendar:horizontalcalendar:1.1.7'
     compile 'com.google.android.gms:play-services:10.0.1'
     compile 'com.google.android.gms:play-services-maps:10.0.1'
@@ -63,6 +64,5 @@ dependencies {
     compile 'com.akexorcist:googledirectionlibrary:1.0.5'
     testCompile 'junit:junit:4.12'
     androidTestCompile 'junit:junit:4.12'
-    compile project(':sdkui')
 }
 apply plugin: 'com.google.gms.google-services'

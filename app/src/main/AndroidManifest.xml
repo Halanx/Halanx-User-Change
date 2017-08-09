@@ -128,10 +128,6 @@
             android:label="Schedule"
             android:screenOrientation="portrait"
             android:parentActivityName=".Activities.CartActivity" />
-        <activity
-            android:name=".Activities.StoresActivity"
-            android:screenOrientation="portrait"
-            android:label="Stores" />
 
 
         <service android:name=".LocService" />

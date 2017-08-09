@@ -112,7 +112,7 @@
 
                 <EditText
                     android:id="@+id/restQuantity"
-                    android:layout_width="145dp"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:editable="false"
                     android:gravity="center_horizontal"

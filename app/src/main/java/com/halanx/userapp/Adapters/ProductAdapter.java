@@ -13,6 +13,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.halanx.userapp.Activities.ItemDisplayActivity;
+import com.halanx.userapp.Interfaces.DataInterface;
+import com.halanx.userapp.POJO.CartItemPost;
 import com.halanx.userapp.POJO.ProductInfo;
 import com.halanx.userapp.R;
 import com.squareup.picasso.Picasso;
@@ -20,21 +22,33 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
+import static com.halanx.userapp.GlobalAccess.djangoBaseUrl;
+
 /**
  * Created by samarthgupta on 23/05/17.
  */
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder> {
 
-    static List<ProductInfo> products = new ArrayList<>();
-    static int restQuantity[] = new int[1000];
+    private List<ProductInfo> products = new ArrayList<>();
+    private static int restQuantity[];
+    private Context c;
+    private String storeCategory;
+    public String mobileNumber;
 
-    Context c;
-
-    public ProductAdapter(List<ProductInfo> products, Context c) {
+    public ProductAdapter(List<ProductInfo> products, Context c, String storeCat, String mobileNumber) {
         this.products = products;
         this.c = c;
+        storeCategory = storeCat;
+        this.mobileNumber = mobileNumber;
 
+        restQuantity = new int[products.size()];
         for (int i = 0; i < products.size(); i++) {
             restQuantity[i] = 1;
         }
@@ -45,7 +59,6 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_product_recycler, parent, false);
         ProductViewHolder holder = new ProductViewHolder(view, products, c);
-
         return holder;
 
     }
@@ -53,23 +66,21 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     @Override
     public void onBindViewHolder(ProductViewHolder holder, int position) {
 
-        if (products.get(position).getProductImage() != null) {
+        if (storeCategory.equals("Grocery")) {
 
             holder.cvProducts.setVisibility(View.VISIBLE);
             holder.cvRest.setVisibility(View.GONE);
             Picasso.with(c).load(products.get(position).getProductImage()).into(holder.productImage);
             holder.productName.setText(products.get(position).getProductName());
             holder.productPrice.setText("Rs." + String.valueOf(products.get(position).getPrice()));
+        } else if (storeCategory.equals("Food")) {
+            //Picasso.with(c).load(R.drawable.fav_48).into(holder.productImage);
+            holder.cvProducts.setVisibility(View.GONE);
+            holder.cvRest.setVisibility(View.VISIBLE);
+            holder.tvRestName.setText(products.get(position).getProductName());
+            holder.tvRestPrice.setText("Rs." + String.valueOf(products.get(position).getPrice()));
+            holder.etRestQuan.setText(String.valueOf(restQuantity[position]));
         }
-
-//        else {
-//            //Picasso.with(c).load(R.drawable.fav_48).into(holder.productImage);
-//            holder.cvProducts.setVisibility(View.GONE);
-//            holder.cvRest.setVisibility(View.VISIBLE);
-//            holder.tvRestName.setText(products.get(position).getProductName());
-//            holder.tvRestPrice.setText("Rs." + String.valueOf(products.get(position).getPrice()));
-//            holder.etRestQuan.setText(String.valueOf(restQuantity[position]));
-//        }
 
 
     }
@@ -80,7 +91,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         return products.size();
     }
 
-    public static class ProductViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class ProductViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         CardView cvProducts, cvRest;
         ImageView productImage;
@@ -139,6 +150,10 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
             //Click on add to cart
             else if (view.getId() == R.id.cv_rest_add_cart) {
                 //Add to cart
+                Double val = Double.parseDouble(etRestQuan.getText().toString());
+                int proId = products.get(position).getId();
+                Long mob = Long.parseLong(mobileNumber);
+                addCartItem(mob, val, proId);
 
             } else if (view.getId() == R.id.restIncrement) {
 
@@ -156,6 +171,26 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
             }
 
 
+        }
+
+        void addCartItem(Long mobile, Double val, int productID) {
+
+            CartItemPost item = new CartItemPost(mobile, val, productID, null);
+
+            Call<CartItemPost> call = new Retrofit.Builder().addConverterFactory(GsonConverterFactory.create()).baseUrl(djangoBaseUrl).build().create(DataInterface.class).putCartItemOnServer(item);
+            call.enqueue(new Callback<CartItemPost>() {
+                @Override
+                public void onResponse(Call<CartItemPost> call, Response<CartItemPost> response) {
+
+                }
+
+                @Override
+                public void onFailure(Call<CartItemPost> call, Throwable t) {
+
+                }
+
+
+            });
         }
     }
 

@@ -4,8 +4,12 @@ package com.halanx.userapp.POJO;
  * Created by samarthgupta on 14/07/17.
  */
 
+import android.support.annotation.NonNull;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+
+import java.util.Comparator;
 
 public class StoreInfo {
 
@@ -21,6 +25,12 @@ public class StoreInfo {
     @SerializedName("StoreLogo")
     @Expose
     private String storeLogo;
+    @SerializedName("Verified")
+    @Expose
+    private boolean isVerified;
+    @SerializedName("StoreCategory")
+    @Expose
+    private String storeCategory;
     @SerializedName("Dealer_FirstName")
     @Expose
     private String dealerFirstName;
@@ -394,4 +404,31 @@ public class StoreInfo {
     public void setActive(Boolean active) {
         this.active = active;
     }
+
+    public boolean isVerified() {
+        return isVerified;
+    }
+
+    public void setVerified(boolean verified) {
+        isVerified = verified;
+    }
+
+    public String getStoreCategory() {
+        return storeCategory;
+    }
+
+    public void setStoreCategory(String storeCategory) {
+        this.storeCategory = storeCategory;
+    }
+
+
+    public static Comparator<StoreInfo> storeComp = new Comparator<StoreInfo>() {
+        @Override
+        public int compare(StoreInfo s1, StoreInfo s2) {
+            String c1 = s1.getStoreCategory();
+            String c2 = s2.getStoreCategory();
+            return c1.compareTo(c2);
+        }
+    };
+
 }

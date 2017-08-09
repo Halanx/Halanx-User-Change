@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4/citi_launcher.png",
+        "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/src/main/res/mipmap-xxxhdpi/citi_launcher.png"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4/visa.png",
+        "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/src/main/res/mipmap-xxxhdpi/visa.png"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4/image_cvv.png",
+        "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/src/main/res/mipmap-xxxhdpi/image_cvv.png"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4/card_icon.png",
+        "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/src/main/res/mipmap-xxxhdpi/card_icon.png"
+    }
+]

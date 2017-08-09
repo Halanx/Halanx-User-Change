@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/drawable-ldpi-v4/ic_notifications_paused_black_24dp.png",
+        "source": "/Users/samarthgupta/.android/build-cache/db64e2b9616e2e45cbc93675d4df48b4eb2a080c/output/res/drawable-ldpi-v4/ic_notifications_paused_black_24dp.png"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/drawable-ldpi-v4/com_mixpanel_android_arrowleft_faded.png",
+        "source": "/Users/samarthgupta/.android/build-cache/6eb74f0de730940a40e7cd1a59c2f21a56b1e733/output/res/drawable-ldpi-v4/com_mixpanel_android_arrowleft_faded.png"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/drawable-ldpi-v4/com_mixpanel_android_arrowright.png",
+        "source": "/Users/samarthgupta/.android/build-cache/6eb74f0de730940a40e7cd1a59c2f21a56b1e733/output/res/drawable-ldpi-v4/com_mixpanel_android_arrowright.png"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/drawable-ldpi-v4/com_mixpanel_android_logo.png",
+        "source": "/Users/samarthgupta/.android/build-cache/6eb74f0de730940a40e7cd1a59c2f21a56b1e733/output/res/drawable-ldpi-v4/com_mixpanel_android_logo.png"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/drawable-ldpi-v4/com_mixpanel_android_arrowright_faded.png",
+        "source": "/Users/samarthgupta/.android/build-cache/6eb74f0de730940a40e7cd1a59c2f21a56b1e733/output/res/drawable-ldpi-v4/com_mixpanel_android_arrowright_faded.png"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/drawable-ldpi-v4/com_mixpanel_android_checkmark.png",
+        "source": "/Users/samarthgupta/.android/build-cache/6eb74f0de730940a40e7cd1a59c2f21a56b1e733/output/res/drawable-ldpi-v4/com_mixpanel_android_checkmark.png"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/drawable-ldpi-v4/com_mixpanel_android_arrowleft.png",
+        "source": "/Users/samarthgupta/.android/build-cache/6eb74f0de730940a40e7cd1a59c2f21a56b1e733/output/res/drawable-ldpi-v4/com_mixpanel_android_arrowleft.png"
+    }
+]

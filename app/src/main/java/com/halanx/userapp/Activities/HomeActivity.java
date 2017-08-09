@@ -34,7 +34,7 @@ import com.github.amlcurran.showcaseview.ShowcaseView;
 import com.github.amlcurran.showcaseview.targets.ViewTarget;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.gson.GsonBuilder;
-import com.halanx.userapp.Fragments.MainFragment;
+import com.halanx.userapp.Fragments.StoresFragment;
 import com.halanx.userapp.Interfaces.DataInterface;
 import com.halanx.userapp.POJO.CartItem;
 import com.halanx.userapp.POJO.UserInfo;
@@ -70,9 +70,8 @@ public class HomeActivity extends AppCompatActivity
     DataInterface client;
 
     ImageView cart, locationButton;
-    RelativeLayout cartitems;
-    TextView itemcount;
-    List<CartItem> activeItems;
+    RelativeLayout cartItems;
+    TextView itemCount;
 
     private static final String TAG = HomeActivity.class.getSimpleName();
     private BroadcastReceiver mRegistrationBroadcastReceiver;
@@ -80,6 +79,11 @@ public class HomeActivity extends AppCompatActivity
     List<CartItem> items;
     AppBarLayout barLayout;
 
+    public static int storeID;
+    public static String storeName;
+    public static String storeLogo;
+    public static int storePosition;
+    public static String storeCat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,18 +104,17 @@ public class HomeActivity extends AppCompatActivity
         retrofit = builder.build();
         client = retrofit.create(DataInterface.class);
 
-        cartitems = (RelativeLayout) findViewById(R.id.cartitems);
-        itemcount = (TextView) findViewById(R.id.itemcount);
+        cartItems = (RelativeLayout) findViewById(R.id.cartitems);
+        itemCount = (TextView) findViewById(R.id.itemcount);
 
-        // set the fragment initially
-        MainFragment fragment = new MainFragment();
+        StoresFragment frg = new StoresFragment();
         android.support.v4.app.FragmentTransaction fragmentTransaction =
                 getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.frag_container, fragment);
+        fragmentTransaction.replace(R.id.frag_container, frg);
         fragmentTransaction.commit();
 
+
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -129,12 +132,11 @@ public class HomeActivity extends AppCompatActivity
         userImage = (ImageView) view.findViewById(R.id.userimage);
 
         //IF NO INTERNET
-        if(!isNetworkAvailable()){
+        if (!isNetworkAvailable()) {
             new AlertDialog.Builder(this)
                     .setTitle("No internet connection")
                     .setMessage("You are not connected to the internet").setCancelable(false)
-                    .setPositiveButton("Close", new DialogInterface.OnClickListener()
-                    {
+                    .setPositiveButton("Close", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             finish();
@@ -203,11 +205,11 @@ public class HomeActivity extends AppCompatActivity
                              //Log.d("items", String.valueOf(items));
 
                              if (items != null && items.size() > 0) {
-                                 cartitems.setVisibility(View.VISIBLE);
-                                 itemcount.setText(String.valueOf(items.size()));
+                                 cartItems.setVisibility(View.VISIBLE);
+                                 itemCount.setText(String.valueOf(items.size()));
 
                              } else {
-                                 cartitems.setVisibility(View.GONE);
+                                 cartItems.setVisibility(View.GONE);
                              }
 
                          }
@@ -325,8 +327,8 @@ public class HomeActivity extends AppCompatActivity
         SharedPreferences pref = getApplicationContext().getSharedPreferences(Config.SHARED_PREF, 0);
         String regId = pref.getString("regId", null);
         String url = "http://ec2-34-208-181-152.us-west-2.compute.amazonaws.com/users/" +
-                getSharedPreferences("Login", Context.MODE_PRIVATE).getString("MobileNumber", null)+"/";
-        Log.i("Gcm",url);
+                getSharedPreferences("Login", Context.MODE_PRIVATE).getString("MobileNumber", null) + "/";
+        Log.i("Gcm", url);
         JSONObject obj = new JSONObject();
         try {
             obj.put("GcmId", regId);
@@ -370,11 +372,11 @@ public class HomeActivity extends AppCompatActivity
                              // Log.d("items", String.valueOf(items));
 
                              if (items != null && items.size() > 0) {
-                                 cartitems.setVisibility(View.VISIBLE);
-                                 itemcount.setText(String.valueOf(items.size()));
+                                 cartItems.setVisibility(View.VISIBLE);
+                                 itemCount.setText(String.valueOf(items.size()));
 
                              } else {
-                                 cartitems.setVisibility(View.GONE);
+                                 cartItems.setVisibility(View.GONE);
                              }
 
                          }

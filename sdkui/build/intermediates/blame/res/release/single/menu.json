@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/menu/menu_temp.xml",
+        "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/src/main/res/menu/menu_temp.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/menu/menu_payments.xml",
+        "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/src/main/res/menu/menu_payments.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/menu/menu_main.xml",
+        "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/src/main/res/menu/menu_main.xml"
+    }
+]

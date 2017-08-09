@@ -1,0 +1,374 @@
+[
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/wait_for_otp.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/db64e2b9616e2e45cbc93675d4df48b4eb2a080c/output/res/layout/wait_for_otp.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/fragment_upi.xml",
+        "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/src/main/res/layout/fragment_upi.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/abc_action_menu_layout.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/layout/abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/select_dialog_multichoice_material.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/layout/select_dialog_multichoice_material.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/date_picker_dialog.xml",
+        "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/src/main/res/layout/date_picker_dialog.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/abc_action_menu_item_layout.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/layout/abc_action_menu_item_layout.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/magicretry_main.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/bca681aec40be701bb5b44af88d0cf97e1f94d4b/output/res/layout/magicretry_main.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/design_navigation_item_subheader.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/235a3261c53e1ca21df733d251e6ba1124c0c480/output/res/layout/design_navigation_item_subheader.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/design_layout_snackbar.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/235a3261c53e1ca21df733d251e6ba1124c0c480/output/res/layout/design_layout_snackbar.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/page.xml",
+        "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/src/main/res/layout/page.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/design_layout_tab_icon.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/235a3261c53e1ca21df733d251e6ba1124c0c480/output/res/layout/design_layout_tab_icon.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/register.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/db64e2b9616e2e45cbc93675d4df48b4eb2a080c/output/res/layout/register.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/abc_action_mode_bar.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/layout/abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/abc_alert_dialog_button_bar_material.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/layout/abc_alert_dialog_button_bar_material.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/fragment_emi.xml",
+        "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/src/main/res/layout/fragment_emi.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/abc_search_dropdown_item_icons_2line.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/layout/abc_search_dropdown_item_icons_2line.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/abc_list_menu_item_icon.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/layout/abc_list_menu_item_icon.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/com_mixpanel_android_last_choice_answer.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/6eb74f0de730940a40e7cd1a59c2f21a56b1e733/output/res/layout/com_mixpanel_android_last_choice_answer.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/loading.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/db64e2b9616e2e45cbc93675d4df48b4eb2a080c/output/res/layout/loading.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/activity_payments.xml",
+        "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/src/main/res/layout/activity_payments.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/com_mixpanel_android_activity_notification_full.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/6eb74f0de730940a40e7cd1a59c2f21a56b1e733/output/res/layout/com_mixpanel_android_activity_notification_full.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/activity_payu_base.xml",
+        "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/src/main/res/layout/activity_payu_base.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/abc_screen_simple_overlay_action_mode.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/layout/abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/support_simple_spinner_dropdown_item.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/layout/support_simple_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/register_pin.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/db64e2b9616e2e45cbc93675d4df48b4eb2a080c/output/res/layout/register_pin.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/abc_screen_toolbar.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/layout/abc_screen_toolbar.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/design_navigation_item_separator.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/235a3261c53e1ca21df733d251e6ba1124c0c480/output/res/layout/design_navigation_item_separator.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/select_dialog_item_material.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/layout/select_dialog_item_material.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/choose_action.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/db64e2b9616e2e45cbc93675d4df48b4eb2a080c/output/res/layout/choose_action.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/abc_activity_chooser_view_list_item.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/layout/abc_activity_chooser_view_list_item.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/design_bottom_sheet_dialog.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/235a3261c53e1ca21df733d251e6ba1124c0c480/output/res/layout/design_bottom_sheet_dialog.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/bank.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/db64e2b9616e2e45cbc93675d4df48b4eb2a080c/output/res/layout/bank.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/activity_temp.xml",
+        "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/src/main/res/layout/activity_temp.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/abc_action_bar_title_item.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/layout/abc_action_bar_title_item.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/fragment_cash_card.xml",
+        "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/src/main/res/layout/fragment_cash_card.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/notification_template_media.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/layout/notification_template_media.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/abc_screen_simple.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/layout/abc_screen_simple.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/com_mixpanel_android_first_choice_answer.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/6eb74f0de730940a40e7cd1a59c2f21a56b1e733/output/res/layout/com_mixpanel_android_first_choice_answer.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/layout_saved_card.xml",
+        "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/src/main/res/layout/layout_saved_card.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/abc_list_menu_item_checkbox.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/layout/abc_list_menu_item_checkbox.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/layout_user_cards.xml",
+        "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/src/main/res/layout/layout_user_cards.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/abc_list_menu_item_radio.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/layout/abc_list_menu_item_radio.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/cb_layout_snooze_slow_user.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/db64e2b9616e2e45cbc93675d4df48b4eb2a080c/output/res/layout/cb_layout_snooze_slow_user.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/design_text_input_password_icon.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/235a3261c53e1ca21df733d251e6ba1124c0c480/output/res/layout/design_text_input_password_icon.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/abc_expanded_menu_layout.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/layout/abc_expanded_menu_layout.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/abc_popup_menu_header_item_layout.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/layout/abc_popup_menu_header_item_layout.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/notification_template_lines.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/layout/notification_template_lines.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/upi_helper.xml",
+        "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/src/main/res/layout/upi_helper.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/abc_select_dialog_material.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/layout/abc_select_dialog_material.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/notification_template_part_chronometer.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/layout/notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/com_mixpanel_android_activity_notification_mini.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/6eb74f0de730940a40e7cd1a59c2f21a56b1e733/output/res/layout/com_mixpanel_android_activity_notification_mini.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/abc_list_menu_item_layout.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/layout/abc_list_menu_item_layout.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/abc_dialog_title_material.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/layout/abc_dialog_title_material.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/app_bar.xml",
+        "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/src/main/res/layout/app_bar.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/abc_popup_menu_item_layout.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/layout/abc_popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/abc_action_mode_close_item_material.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/layout/abc_action_mode_close_item_material.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/abc_screen_content_include.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/layout/abc_screen_content_include.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/bankold.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/db64e2b9616e2e45cbc93675d4df48b4eb2a080c/output/res/layout/bankold.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/com_mixpanel_android_question_card.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/6eb74f0de730940a40e7cd1a59c2f21a56b1e733/output/res/layout/com_mixpanel_android_question_card.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/design_layout_tab_text.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/235a3261c53e1ca21df733d251e6ba1124c0c480/output/res/layout/design_layout_tab_text.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/notification_media_action.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/layout/notification_media_action.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/row.xml",
+        "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/src/main/res/layout/row.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/design_navigation_menu.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/235a3261c53e1ca21df733d251e6ba1124c0c480/output/res/layout/design_navigation_menu.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/cb_layout_snooze.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/db64e2b9616e2e45cbc93675d4df48b4eb2a080c/output/res/layout/cb_layout_snooze.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/abc_action_bar_up_container.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/layout/abc_action_bar_up_container.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/com_mixpanel_android_activity_survey.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/6eb74f0de730940a40e7cd1a59c2f21a56b1e733/output/res/layout/com_mixpanel_android_activity_survey.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/design_navigation_item.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/235a3261c53e1ca21df733d251e6ba1124c0c480/output/res/layout/design_navigation_item.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/notification_template_part_time.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/layout/notification_template_part_time.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/fragment_saved_cards.xml",
+        "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/src/main/res/layout/fragment_saved_cards.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/abc_alert_dialog_material.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/layout/abc_alert_dialog_material.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/cb_progressdialog.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/db64e2b9616e2e45cbc93675d4df48b4eb2a080c/output/res/layout/cb_progressdialog.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/design_navigation_item_header.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/235a3261c53e1ca21df733d251e6ba1124c0c480/output/res/layout/design_navigation_item_header.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/fragment_net_banking.xml",
+        "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/src/main/res/layout/fragment_net_banking.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/emi_list_item.xml",
+        "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/src/main/res/layout/emi_list_item.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/notification_template_big_media.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/layout/notification_template_big_media.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/abc_search_view.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/layout/abc_search_view.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/fragment_credit_debit.xml",
+        "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/src/main/res/layout/fragment_credit_debit.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/design_navigation_menu_item.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/235a3261c53e1ca21df733d251e6ba1124c0c480/output/res/layout/design_navigation_menu_item.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/retry_otp.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/db64e2b9616e2e45cbc93675d4df48b4eb2a080c/output/res/layout/retry_otp.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/notification_template_big_media_narrow.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/layout/notification_template_big_media_narrow.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/design_menu_item_action_area.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/235a3261c53e1ca21df733d251e6ba1124c0c480/output/res/layout/design_menu_item_action_area.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/nb_layout.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/db64e2b9616e2e45cbc93675d4df48b4eb2a080c/output/res/layout/nb_layout.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/com_mixpanel_android_middle_choice_answer.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/6eb74f0de730940a40e7cd1a59c2f21a56b1e733/output/res/layout/com_mixpanel_android_middle_choice_answer.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/abc_activity_chooser_view.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/layout/abc_activity_chooser_view.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/fragment_payu_money.xml",
+        "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/src/main/res/layout/fragment_payu_money.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/cb_payments.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/db64e2b9616e2e45cbc93675d4df48b4eb2a080c/output/res/layout/cb_payments.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/design_layout_snackbar_include.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/235a3261c53e1ca21df733d251e6ba1124c0c480/output/res/layout/design_layout_snackbar_include.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/abc_action_bar_view_list_nav_layout.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/layout/abc_action_bar_view_list_nav_layout.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/dialog_ui_header.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/db64e2b9616e2e45cbc93675d4df48b4eb2a080c/output/res/layout/dialog_ui_header.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/cb_prog_dialog.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/db64e2b9616e2e45cbc93675d4df48b4eb2a080c/output/res/layout/cb_prog_dialog.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/activity_main.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/bca681aec40be701bb5b44af88d0cf97e1f94d4b/output/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/select_dialog_singlechoice_material.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/layout/select_dialog_singlechoice_material.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/layout/notification_media_cancel_action.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/layout/notification_media_cancel_action.xml"
+    }
+]

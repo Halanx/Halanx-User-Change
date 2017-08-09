@@ -30,7 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:textColor="#302F2F"
+            android:textColor="#696969"
             android:textSize="30sp"
             android:text="Amount"
             android:gravity="center"/>
@@ -69,13 +69,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textColor="#FFFFFF"
+            android:textColor="#ffffff"
             android:textSize="25sp"
             android:textStyle="bold"
             android:text="PAY NOW"
             android:id="@+id/button_pay_now"
             android:enabled="false"
-            android:background="@drawable/bttn_grey_disabled"/>
+            android:background="#b9b9b9"/>
 
     </RelativeLayout>
 

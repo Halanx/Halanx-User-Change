@@ -40,6 +40,10 @@
         "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/drawable/abc_vector_test.xml"
     },
     {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/androidTest/debug/drawable/design_snackbar_background.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/235a3261c53e1ca21df733d251e6ba1124c0c480/output/res/drawable/design_snackbar_background.xml"
+    },
+    {
         "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/androidTest/debug/drawable/monthicon.png",
         "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/bundles/debug/res/drawable/monthicon.png"
     },
@@ -184,6 +188,10 @@
         "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/bundles/debug/res/drawable/mc_icon.png"
     },
     {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/androidTest/debug/drawable/navigation_empty_icon.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/235a3261c53e1ca21df733d251e6ba1124c0c480/output/res/drawable/navigation_empty_icon.xml"
+    },
+    {
         "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/androidTest/debug/drawable/shape_progress.xml",
         "source": "/Users/samarthgupta/.android/build-cache/db64e2b9616e2e45cbc93675d4df48b4eb2a080c/output/res/drawable/shape_progress.xml"
     },
@@ -234,6 +242,10 @@
     {
         "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/androidTest/debug/drawable/logo_visa.png",
         "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/bundles/debug/res/drawable/logo_visa.png"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/androidTest/debug/drawable/design_fab_background.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/235a3261c53e1ca21df733d251e6ba1124c0c480/output/res/drawable/design_fab_background.xml"
     },
     {
         "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/androidTest/debug/drawable/abc_btn_check_material.xml",
@@ -306,6 +318,10 @@
     {
         "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/androidTest/debug/drawable/abc_btn_borderless_material.xml",
         "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/drawable/abc_btn_borderless_material.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/androidTest/debug/drawable/design_ic_visibility.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/235a3261c53e1ca21df733d251e6ba1124c0c480/output/res/drawable/design_ic_visibility.xml"
     },
     {
         "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/androidTest/debug/drawable/hdfc_flat_logo.png",

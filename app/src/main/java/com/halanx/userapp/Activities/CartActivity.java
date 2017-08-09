@@ -67,6 +67,7 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
     boolean delivery = false;
 
     String date, timings;
+    String total;
 
     String mobileNumber;
     String addressDetails;
@@ -159,7 +160,7 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
                     Log.d("TAG", "If");
                     progressBar.setVisibility(View.INVISIBLE);
                     recyclerView = (RecyclerView) findViewById(R.id.cart_recycler_view);
-                    adapterTemp = new CartsAdapter(activeItems, getApplicationContext(),tvTotal);
+                    adapterTemp = new CartsAdapter(activeItems, getApplicationContext());
                     RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
                     recyclerView.setAdapter(adapterTemp);
                     recyclerView.setLayoutManager(layoutManager);
@@ -251,6 +252,13 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
                 line1 = (EditText) dialog.findViewById(R.id.et1_dialogue);
                 line2 = (EditText) dialog.findViewById(R.id.et2_dialogue);
                 line3 = (EditText) dialog.findViewById(R.id.et3_dialogue);
+                String add = getSharedPreferences("location",Context.MODE_PRIVATE).getString("addressDelivery",null);
+               if(add!=null) {
+                   String[] Detail_add = add.split(",");
+                   line2.setText(Detail_add[1]);
+                   line3.setText(Detail_add[2]);
+               }
+
                 Button proceed = (Button) dialog.findViewById(R.id.btProceed_dialogue);
                 Button cancel = (Button) dialog.findViewById(R.id.btCancel_dialogue);
 
@@ -300,6 +308,7 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
                 }
 
                 intentCheckout.putExtra("deliveryScheduled", delivery_scheduled);
+                intentCheckout.putExtra("total_cost",total);
                 startActivity(intentCheckout);
                 finish();
                 break;
@@ -316,9 +325,9 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
                         public void onResponse(Call<CartsInfo> call, Response<CartsInfo> response) {
                             CartsInfo cart = response.body();
 
-                            String total = cart.getTotal().toString();
+                            total = cart.getTotal().toString();
                             String del = cart.getDeliveryCharges().toString();
-
+                            tvSubtotal.setText(total);
                             tvTotal.setText(total);
                             tvDelivery.setText(del);
 

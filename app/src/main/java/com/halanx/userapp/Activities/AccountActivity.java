@@ -81,7 +81,7 @@ public class AccountActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
 
-                        if(line1.getText().equals("")||line2.getText().equals("")||line3.getText().equals("")){
+                        if(line1.getText().equals(" ")||line2.getText().equals(" ")||line3.getText().equals(" ")){
 
                             Toast.makeText(getApplicationContext(), "Enter Your Address", Toast.LENGTH_SHORT).show();
 
@@ -91,7 +91,7 @@ public class AccountActivity extends AppCompatActivity {
                             addressDetails = line1.getText().toString() + ", " + line2.getText().toString() + ", " + line3.getText().toString();
                             Log.d("TAG", addressDetails);
                             tvAddress.setText(addressDetails);
-                            dialog.dismiss();
+                            tvAddress.invalidate();
                             String url = "http://ec2-34-208-181-152.us-west-2.compute.amazonaws.com/users/" +
                                     getSharedPreferences("Login", Context.MODE_PRIVATE).getString("MobileNumber", null)+"/";
                              JSONObject obj = new JSONObject();
@@ -104,6 +104,8 @@ public class AccountActivity extends AppCompatActivity {
                                 @Override
                                 public void onResponse(JSONObject response) {
                                     Log.i("Address", "Done");
+                                    dialog.dismiss();
+
                                 }
                             }, new com.android.volley.Response.ErrorListener() {
                                 @Override

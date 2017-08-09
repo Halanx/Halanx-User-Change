@@ -1,19 +1,67 @@
 [
     {
-        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/anim/abc_slide_in_top.xml",
-        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/anim/abc_slide_in_top.xml"
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/anim/design_bottom_sheet_slide_out.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/235a3261c53e1ca21df733d251e6ba1124c0c480/output/res/anim/design_bottom_sheet_slide_out.xml"
     },
     {
         "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/anim/cb_fade_in.xml",
         "source": "/Users/samarthgupta/.android/build-cache/db64e2b9616e2e45cbc93675d4df48b4eb2a080c/output/res/anim/cb_fade_in.xml"
     },
     {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/anim/fade_in.xml",
+        "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/src/main/res/anim/fade_in.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/anim/abc_slide_out_bottom.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/anim/abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/anim/abc_popup_exit.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/anim/abc_popup_exit.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/anim/cb_face_out.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/db64e2b9616e2e45cbc93675d4df48b4eb2a080c/output/res/anim/cb_face_out.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/anim/com_mixpanel_android_fade_in.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/6eb74f0de730940a40e7cd1a59c2f21a56b1e733/output/res/anim/com_mixpanel_android_fade_in.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/anim/design_snackbar_in.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/235a3261c53e1ca21df733d251e6ba1124c0c480/output/res/anim/design_snackbar_in.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/anim/abc_shrink_fade_out_from_bottom.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/anim/abc_shrink_fade_out_from_bottom.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/anim/abc_fade_out.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/anim/abc_fade_out.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/anim/abc_grow_fade_in_from_bottom.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/anim/abc_grow_fade_in_from_bottom.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/anim/cb_animation.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/db64e2b9616e2e45cbc93675d4df48b4eb2a080c/output/res/anim/cb_animation.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/anim/abc_slide_in_top.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/anim/abc_slide_in_top.xml"
+    },
+    {
         "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/anim/abc_slide_out_top.xml",
         "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/anim/abc_slide_out_top.xml"
     },
     {
-        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/anim/fade_in.xml",
-        "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/src/main/res/anim/fade_in.xml"
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/anim/design_fab_out.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/235a3261c53e1ca21df733d251e6ba1124c0c480/output/res/anim/design_fab_out.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/anim/design_fab_in.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/235a3261c53e1ca21df733d251e6ba1124c0c480/output/res/anim/design_fab_in.xml"
     },
     {
         "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/anim/cb_tranlateup.xml",
@@ -28,28 +76,16 @@
         "source": "/Users/samarthgupta/.android/build-cache/db64e2b9616e2e45cbc93675d4df48b4eb2a080c/output/res/anim/cb_translate.xml"
     },
     {
-        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/anim/abc_slide_out_bottom.xml",
-        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/anim/abc_slide_out_bottom.xml"
-    },
-    {
-        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/anim/abc_popup_exit.xml",
-        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/anim/abc_popup_exit.xml"
-    },
-    {
         "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/anim/abc_popup_enter.xml",
         "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/anim/abc_popup_enter.xml"
     },
     {
-        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/anim/cb_face_out.xml",
-        "source": "/Users/samarthgupta/.android/build-cache/db64e2b9616e2e45cbc93675d4df48b4eb2a080c/output/res/anim/cb_face_out.xml"
-    },
-    {
-        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/anim/com_mixpanel_android_fade_in.xml",
-        "source": "/Users/samarthgupta/.android/build-cache/6eb74f0de730940a40e7cd1a59c2f21a56b1e733/output/res/anim/com_mixpanel_android_fade_in.xml"
-    },
-    {
         "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/anim/abc_slide_in_bottom.xml",
         "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/anim/abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/anim/design_snackbar_out.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/235a3261c53e1ca21df733d251e6ba1124c0c480/output/res/anim/design_snackbar_out.xml"
     },
     {
         "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/anim/face_out.xml",
@@ -60,23 +96,11 @@
         "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/anim/abc_fade_in.xml"
     },
     {
-        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/anim/abc_shrink_fade_out_from_bottom.xml",
-        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/anim/abc_shrink_fade_out_from_bottom.xml"
-    },
-    {
-        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/anim/abc_fade_out.xml",
-        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/anim/abc_fade_out.xml"
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/anim/design_bottom_sheet_slide_in.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/235a3261c53e1ca21df733d251e6ba1124c0c480/output/res/anim/design_bottom_sheet_slide_in.xml"
     },
     {
         "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/anim/com_mixpanel_android_slide_down.xml",
         "source": "/Users/samarthgupta/.android/build-cache/6eb74f0de730940a40e7cd1a59c2f21a56b1e733/output/res/anim/com_mixpanel_android_slide_down.xml"
-    },
-    {
-        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/anim/abc_grow_fade_in_from_bottom.xml",
-        "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/anim/abc_grow_fade_in_from_bottom.xml"
-    },
-    {
-        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/anim/cb_animation.xml",
-        "source": "/Users/samarthgupta/.android/build-cache/db64e2b9616e2e45cbc93675d4df48b4eb2a080c/output/res/anim/cb_animation.xml"
     }
 ]

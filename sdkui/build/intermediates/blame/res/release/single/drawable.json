@@ -44,6 +44,10 @@
         "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/drawable/abc_seekbar_tick_mark_material.xml"
     },
     {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/drawable/design_snackbar_background.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/235a3261c53e1ca21df733d251e6ba1124c0c480/output/res/drawable/design_snackbar_background.xml"
+    },
+    {
         "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/drawable/abc_ic_go_search_api_material.xml",
         "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/drawable/abc_ic_go_search_api_material.xml"
     },
@@ -180,6 +184,10 @@
         "source": "/Users/samarthgupta/.android/build-cache/6eb74f0de730940a40e7cd1a59c2f21a56b1e733/output/res/drawable/com_mixpanel_android_cta_button_highlight.xml"
     },
     {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/drawable/design_fab_background.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/235a3261c53e1ca21df733d251e6ba1124c0c480/output/res/drawable/design_fab_background.xml"
+    },
+    {
         "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/drawable/com_mixpanel_android_choice_middle_states.xml",
         "source": "/Users/samarthgupta/.android/build-cache/6eb74f0de730940a40e7cd1a59c2f21a56b1e733/output/res/drawable/com_mixpanel_android_choice_middle_states.xml"
     },
@@ -194,6 +202,10 @@
     {
         "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/drawable/logo_citi.png",
         "source": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/src/main/res/drawable/logo_citi.png"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/drawable/navigation_empty_icon.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/235a3261c53e1ca21df733d251e6ba1124c0c480/output/res/drawable/navigation_empty_icon.xml"
     },
     {
         "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/drawable/abc_spinner_textfield_background_material.xml",
@@ -310,6 +322,10 @@
     {
         "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/drawable/abc_edit_text_material.xml",
         "source": "/Users/samarthgupta/.android/build-cache/3259ef04cbd27ec83903d6f4c04a6492c9e48f77/output/res/drawable/abc_edit_text_material.xml"
+    },
+    {
+        "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/drawable/design_ic_visibility.xml",
+        "source": "/Users/samarthgupta/.android/build-cache/235a3261c53e1ca21df733d251e6ba1124c0c480/output/res/drawable/design_ic_visibility.xml"
     },
     {
         "merged": "/Users/samarthgupta/AndroidStudioProjects/Halanx-User-Change/sdkui/build/intermediates/res/merged/release/drawable/icon_card.png",

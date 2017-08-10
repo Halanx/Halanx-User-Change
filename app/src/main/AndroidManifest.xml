@@ -23,10 +23,8 @@
         android:icon="@drawable/icon"
         android:label="Halanx"
         android:supportsRtl="true"
-
         android:theme="@style/Theme.AppCompat.Light"
         tools:replace="android:icon,android:label,android:theme">
-
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyDJmeEm-ZMoT-pkKiPkJ8DeHIoYGFAWh-Q" />
@@ -37,37 +35,33 @@
         <activity
             android:name=".Activities.RegisterActivity"
             android:label="Register"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".Activities.SigninActivity" />
+            android:parentActivityName=".Activities.SigninActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Activities.SigninActivity"
-            android:screenOrientation="portrait"
-            android:label="Sign In">
-
-        </activity>
-
+            android:label="Sign In"
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".Activities.HomeActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
             android:name=".Activities.ItemDisplayActivity"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".Activities.HomeActivity"/>
-
+            android:parentActivityName=".Activities.HomeActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Activities.RatingActivity"
-            android:screenOrientation="portrait"
-            android:label="Rate your shopper" />
+            android:label="Rate your shopper"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Activities.PaymentActivity"
-            android:screenOrientation="portrait"
             android:label="Payment"
-            android:parentActivityName=".Activities.CartActivity" />
+            android:parentActivityName=".Activities.CartActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Activities.MapsActivity"
-            android:screenOrientation="portrait"
-            android:label="Set delivery location" />
+            android:label="Set delivery location"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Activities.SplashActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
@@ -81,58 +75,57 @@
         <activity
             android:name=".Activities.OrdersActivity"
             android:label="Orders"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".Activities.HomeActivity"></activity>
+            android:parentActivityName=".Activities.HomeActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Activities.FavouritesActivity"
             android:label="Favourites"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".Activities.HomeActivity" />
+            android:parentActivityName=".Activities.HomeActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Activities.PointsActivity"
             android:label="Points"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".Activities.HomeActivity" />
+            android:parentActivityName=".Activities.HomeActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Activities.ReferEarnActivity"
             android:label="Refer And Earn"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".Activities.HomeActivity" />
+            android:parentActivityName=".Activities.HomeActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Activities.BecomeShopperActivity"
-            android:screenOrientation="portrait"
             android:label="Become a Shopper"
-            android:parentActivityName=".Activities.HomeActivity" />
+            android:parentActivityName=".Activities.HomeActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Activities.HelpActivity"
-            android:screenOrientation="portrait"
             android:label="Help"
-            android:parentActivityName=".Activities.HomeActivity" />
+            android:parentActivityName=".Activities.HomeActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Activities.CartActivity"
             android:label="Cart"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".Activities.HomeActivity" />
+            android:parentActivityName=".Activities.HomeActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Activities.SavedCardsActivity"
-            android:screenOrientation="portrait"
             android:label="Payment"
-            android:parentActivityName=".Activities.HomeActivity" />
+            android:parentActivityName=".Activities.HomeActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Activities.AccountActivity"
             android:label="Account"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".Activities.HomeActivity" />
+            android:parentActivityName=".Activities.HomeActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Activities.ScheduleActivity"
             android:label="Schedule"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".Activities.CartActivity" />
+            android:parentActivityName=".Activities.CartActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Activities.StoresActivity"
-            android:screenOrientation="portrait"
-            android:label="Stores" />
-
+            android:label="Stores"
+            android:screenOrientation="portrait" />
 
         <service android:name=".LocService" />
         <!-- Firebase Notifications -->
@@ -148,6 +141,7 @@
         </service>
         <!-- ./Firebase Notifications -->
 
+        <activity android:name=".Activities.Tracking"></activity>
     </application>
 
 </manifest><!--

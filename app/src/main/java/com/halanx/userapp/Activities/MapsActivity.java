@@ -30,6 +30,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -88,7 +89,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     SharedPreferences.Editor editor;
     String addressConfirm;
     LatLng currLoc;
-
+    ProgressBar progressBar;
     String ApiKey = "AIzaSyBnCtz4CuPtcZ-87zXLsYvH1BrkTTJ9eyw";
 
     @Override
@@ -98,6 +99,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         setContentView(R.layout.activity_maps);
         cvConfirmLoc = (CardView) findViewById(R.id.cv_loc_confirm);
         setLocation = (FloatingActionButton) findViewById(R.id.set_location1);
+        progressBar = (ProgressBar) findViewById(R.id.progress);
 
         //Check internet connection
         if(!isNetworkAvailable()){
@@ -394,6 +396,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 if (mCurrLocationMarker != null) {
                     locationAfterOrder = mCurrLocationMarker.getPosition();
                     SharedPreferences sharedPreferences = getSharedPreferences("location", Context.MODE_PRIVATE);
+                    cvConfirmLoc.setVisibility(View.GONE);
+                    progressBar.setVisibility(View.VISIBLE);
 
                     editor = sharedPreferences.edit();
                     lat = locationAfterOrder.latitude;
@@ -462,7 +466,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
                                         dialog = dial.create();
                                         dialog.show();
-
+                                        progressBar.setVisibility(View.GONE);
+                                        cvConfirmLoc.setVisibility(View.VISIBLE);
 
                                     } catch (JSONException e) {
                                         e.printStackTrace();

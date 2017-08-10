@@ -317,6 +317,14 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
                 Animation slideDown = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slide_down);
 
                 if (detailslayout.getVisibility() == View.GONE) {
+
+                    detailslayout.startAnimation(slideUp);
+                    detailslayout.setVisibility(View.VISIBLE);
+                    orderslayout.setVisibility(View.GONE);
+
+                    btnDelivery.setVisibility(View.GONE);
+                    btnconfirm.setVisibility(View.VISIBLE);
+
                     SharedPreferences sharedPreferences = getSharedPreferences("Login", Context.MODE_PRIVATE);
                     String mobileNumber = sharedPreferences.getString("MobileNumber", null);
                     Call<CartsInfo> callCart = client.getCartDetails(mobileNumber);
@@ -339,13 +347,6 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
 
                         }
                     });
-
-                    detailslayout.startAnimation(slideUp);
-                    detailslayout.setVisibility(View.VISIBLE);
-                    orderslayout.setVisibility(View.GONE);
-
-                    btnDelivery.setVisibility(View.GONE);
-                    btnconfirm.setVisibility(View.VISIBLE);
 
 
 

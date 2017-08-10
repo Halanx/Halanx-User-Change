@@ -130,6 +130,9 @@ RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                btnVerify.setVisibility(View.GONE);
+                progressRegister.setVisibility(View.VISIBLE);
+
                 email = inputEmail.getText().toString().trim();
                 firstName = inputFname.getText().toString().trim();
                 lastName = inputLname.getText().toString().trim();
@@ -157,21 +160,39 @@ RegisterActivity extends AppCompatActivity {
 
                 //  CHECKING ALL EDIT TEXT FIELDS
                 if (TextUtils.isEmpty(email)) {
+                    btnVerify.setVisibility(View.VISIBLE);
+                    progressRegister.setVisibility(View.GONE);
+
                     Toast.makeText(getApplicationContext(), "Enter mobile address!", Toast.LENGTH_SHORT).show();
                     return;
                 } else if (!emailValidator(email)) {
+                    btnVerify.setVisibility(View.VISIBLE);
+                    progressRegister.setVisibility(View.GONE);
+
                     Toast.makeText(RegisterActivity.this, "Please enter valid email address", Toast.LENGTH_SHORT).show();
                     return;
-                } else if (password.length() < 6) {
+                } else if (password.length() < 6) { btnVerify.setVisibility(View.VISIBLE);
+                    progressRegister.setVisibility(View.GONE);
+
+
                     Toast.makeText(getApplicationContext(), "Password too short, enter minimum 6 characters!", Toast.LENGTH_SHORT).show();
                     return;
                 } else if (TextUtils.isEmpty(firstName) || TextUtils.isEmpty(lastName)) {
+                    btnVerify.setVisibility(View.VISIBLE);
+                    progressRegister.setVisibility(View.GONE);
+
                     Toast.makeText(getApplicationContext(), "Enter First and Last name", Toast.LENGTH_SHORT).show();
                     return;
                 } else if (TextUtils.isEmpty(mobileNumber)) {
+                    btnVerify.setVisibility(View.VISIBLE);
+                    progressRegister.setVisibility(View.GONE);
+
                     Toast.makeText(getApplicationContext(), "Enter Mobile Number", Toast.LENGTH_SHORT).show();
                     return;
                 } else if (mobileNumber.length() != 10) {
+                    btnVerify.setVisibility(View.VISIBLE);
+                    progressRegister.setVisibility(View.GONE);
+
                     Toast.makeText(getApplicationContext(), "Please enter a valid mobile number", Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -258,6 +279,9 @@ RegisterActivity extends AppCompatActivity {
 
 
                 } else {
+                    btnVerify.setVisibility(View.VISIBLE);
+                    progressRegister.setVisibility(View.GONE);
+
 
                     Toast.makeText(RegisterActivity.this, "No internet connection", Toast.LENGTH_SHORT).show();
 

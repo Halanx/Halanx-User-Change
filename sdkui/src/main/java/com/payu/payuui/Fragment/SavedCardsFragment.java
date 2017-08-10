@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,10 +31,9 @@ import com.payu.india.Tasks.DeleteCardTask;
 import com.payu.payuui.Activity.PayUBaseActivity;
 import com.payu.payuui.Adapter.PagerAdapter;
 import com.payu.payuui.Adapter.SavedCardItemFragmentAdapter;
+import com.payu.payuui.R;
 import com.payu.payuui.SdkuiUtil.SdkUIConstants;
 import com.payu.payuui.Widget.CirclePageIndicator;
-import com.payu.payuui.R;
-
 import com.payu.payuui.Widget.ZoomOutPageTransformer;
 
 import java.util.ArrayList;
@@ -50,7 +48,7 @@ public class SavedCardsFragment extends Fragment implements View.OnClickListener
     private SavedCardItemFragmentAdapter mAdapter;
     private ViewPager mPager;
     private ArrayList<StoredCard> mStoreCards;
-    private ImageButton deleteButton;
+    private TextView deleteButton;
     private CirclePageIndicator indicator;
     private View mView;
     private TextView titleText;
@@ -101,7 +99,7 @@ public class SavedCardsFragment extends Fragment implements View.OnClickListener
         mPager = (ViewPager) mView.findViewById(R.id.pager_saved_card);
         mPager.setAdapter(mAdapter);
         mPager.setClipToPadding(false);
-        (deleteButton = (ImageButton) mView.findViewById(R.id.button_delete)).setOnClickListener(this);
+        (deleteButton = (TextView) mView.findViewById(R.id.button_delete)).setOnClickListener(this);
         titleText = (TextView) mView.findViewById(R.id.edit_text_title);
 
 

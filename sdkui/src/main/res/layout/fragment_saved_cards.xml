@@ -58,12 +58,14 @@
                     android:layout_gravity="center"
                     />
 
-            <ImageButton
+            <TextView
                 android:id="@+id/button_delete"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_delete_black_24dp"
-                android:text="Delete"
+                android:textColor="#000000"
+                android:text="REMOVE"
+                android:textStyle="bold"
+                android:textSize="15dp"
                 android:layout_gravity="right"
                 android:background="#FFFFFF"
                 android:layout_marginRight="15dp"

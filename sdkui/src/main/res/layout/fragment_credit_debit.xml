@@ -322,6 +322,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/save_card"
                 android:textColor="#9C9C9C"
+                android:checked="true"
                 android:id="@+id/check_box_save_card"/>
 
             <CheckBox

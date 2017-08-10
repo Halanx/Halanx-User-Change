@@ -183,10 +183,10 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
     public void navigateToBaseActivity() {
 
 
-        merchantKey =  "gtKFFx";
-        int environment = PayuConstants.STAGING_ENV;
+        merchantKey =  "0MQaQP";
+        int environment = PayuConstants.PRODUCTION_ENV;
         String email = "samarth-gupta@halanx.com";
-        String amount = total;
+        String amount = "10";
 
 //        merchantKey = ((EditText) findViewById(R.id.editTextMerchantKey)).getText().toString();
 //        String amount = ((EditText) findViewById(R.id.editTextAmount)).getText().toString();
@@ -323,7 +323,7 @@ public class PaymentActivity extends AppCompatActivity implements View.OnClickLi
             try {
 
                 //TODO Below url is just for testing purpose, merchant needs to replace this with their server side hash generation url
-                URL url = new URL("https://payu.herokuapp.com/get_hash");
+                URL url = new URL("https://payu.herokuapp.com/get_hash");       //replace this
 
                 // get the payuConfig first
                 String postParam = postParams[0];
